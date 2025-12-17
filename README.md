@@ -1,180 +1,195 @@
-# 🚀 Enhanced Portfolio Website - Jayanta Mardi
+# 💼 LinkedIn-Style Professional Portfolio
 
-A modern, responsive, and feature-rich portfolio website showcasing skills, projects, and experience as a Software Developer.
+A modern, interactive **LinkedIn-inspired portfolio website** designed to showcase skills, experience, projects, and articles in a professional and engaging way.
 
-## ✨ Features
-
-### 🎨 **Visual & UX**
-- **Dark/Light Theme Toggle** - Switch between themes with smooth transitions
-- **Responsive Design** - Perfect display on all devices (mobile, tablet, desktop)
-- **Smooth Animations** - AOS (Animate On Scroll) library integration
-- **Modern UI/UX** - Clean, professional design with CSS Grid & Flexbox
-- **Custom Scrollbar** - Branded scrollbar with gradient styling
-- **Preloader Animation** - Professional loading screen
-
-### 📱 **Interactive Sections**
-- **Hero Section** - Eye-catching intro with typing animation
-- **About Section** - Professional introduction with profile image
-- **Skills Section** - Animated progress bars showing proficiency levels
-- **Services Section** - Showcase of offered services with hover effects
-- **Projects Portfolio** - Interactive project cards with overlay effects
-- **Experience Timeline** - Professional journey visualization
-- **Achievements** - Certificates and awards showcase
-- **Testimonials Slider** - Client feedback with auto-rotation
-- **Blog Section** - Latest articles and posts
-- **Contact Form** - Functional contact form with EmailJS integration
-
-### 🛠️ **Technical Features**
-- **Smooth Scrolling** - Navigation with smooth scroll behavior
-- **Mobile Menu** - Hamburger menu for mobile devices
-- **Form Validation** - Client-side validation for contact form
-- **Email Integration** - EmailJS for contact form submissions
-- **SEO Optimized** - Meta tags and semantic HTML structure
-- **Fast Loading** - Optimized assets and efficient code
-- **Cross-browser Compatible** - Works on all modern browsers
-
-## 🗂️ **Project Structure**
-
-```
-portfoliojm/
-├── index.html              # Main HTML file
-├── style.css              # Enhanced CSS with themes & animations
-├── script.js              # JavaScript functionality
-├── cris.jpg               # Hero background image
-├── index.jpg              # Profile image
-├── resume.pdf             # Downloadable resume
-├── README.md              # This file
-├── DEPLOYMENT.md          # Deployment instructions
-├── emailjs-config.js      # EmailJS configuration
-├── images-guide.md        # Guide for adding images
-└── [image files]          # Project, blog, and testimonial images
-```
-
-## 🎯 **Sections Overview**
-
-1. **Hero/Home** - Introduction with call-to-action buttons
-2. **About** - Personal introduction and professional summary  
-3. **Skills** - Technical skills with animated progress bars
-4. **Services** - Offered services and expertise areas
-5. **Projects** - Portfolio of completed projects
-6. **Timeline** - Educational and professional journey
-7. **Achievements** - Certifications and awards
-8. **Testimonials** - Client and colleague feedback
-9. **Blog** - Latest articles and thoughts
-10. **Contact** - Contact information and working form
-11. **Footer** - Social links and copyright
-
-## 🚀 **Quick Start**
-
-1. **Clone or Download** the project files
-2. **Add Your Content**:
-   - Replace placeholder images with your photos
-   - Update personal information in `index.html`
-   - Modify skills, projects, and experience
-   - Add your actual resume PDF
-
-3. **Setup Contact Form** (Optional):
-   - Create EmailJS account
-   - Configure email service
-   - Update credentials in `script.js`
-
-4. **Deploy**:
-   - Upload to web hosting
-   - Or use GitHub Pages (free)
-   - See `DEPLOYMENT.md` for detailed instructions
-
-## 🎨 **Customization**
-
-### **Colors & Themes**
-```css
-:root {
-    --primary-color: #f9004d;    /* Main brand color */
-    --bg-color: #000000;         /* Dark theme background */
-    --text-color: #ffffff;       /* Text color */
-    /* Modify these in style.css */
-}
-```
-
-### **Content Updates**
-- Update personal info in HTML
-- Modify skill percentages
-- Add your projects and descriptions
-- Update social media links
-- Customize testimonials and blog posts
-
-## 📧 **Contact Form Setup**
-
-1. Sign up at [EmailJS](https://www.emailjs.com/)
-2. Create email service and template
-3. Get your credentials
-4. Update `script.js` with your EmailJS config
-5. Test the contact form
-
-## 📱 **Responsive Breakpoints**
-
-- **Desktop**: 1200px+
-- **Tablet**: 900px - 1199px  
-- **Mobile**: Below 900px
-- **Small Mobile**: Below 600px
-
-## 🌟 **Key Highlights**
-
-- ✅ **Modern ES6+ JavaScript**
-- ✅ **CSS Custom Properties (Variables)**
-- ✅ **Intersection Observer API**
-- ✅ **Local Storage for Theme Preference**
-- ✅ **Semantic HTML5 Structure**
-- ✅ **Accessibility Considerations**
-- ✅ **Performance Optimized**
-- ✅ **Progressive Enhancement**
-
-## 🔧 **Technologies Used**
-
-- **HTML5** - Semantic markup
-- **CSS3** - Advanced styling with Grid, Flexbox, Animations
-- **JavaScript (ES6+)** - Modern interactive functionality
-- **Font Awesome** - Icons
-- **Google Fonts** - Typography
-- **AOS Library** - Scroll animations
-- **EmailJS** - Contact form backend
-
-## 📊 **Performance Features**
-
-- Lazy loading for images
-- Smooth scroll behavior
-- Optimized animations
-- Minimal HTTP requests
-- Compressed assets
-- Progressive enhancement
-
-## 🎁 **Bonus Features**
-
-- **PWA Ready** - Service worker template included
-- **Theme Persistence** - Remembers user's theme choice
-- **Scroll to Top** - Auto-generated scroll button
-- **Mobile Menu** - Touch-friendly navigation
-- **Form Notifications** - User feedback system
-- **Parallax Effects** - Subtle background movements
-
-## 📞 **Support & Updates**
-
-This portfolio template is designed to be:
-- Easy to customize
-- Simple to deploy
-- Ready for production
-- Continuously updatable
-
-## 🏆 **Results You Can Expect**
-
-- Professional online presence
-- Improved job opportunities  
-- Client trust and credibility
-- Showcase of technical skills
-- Direct contact from potential clients/employers
-- Better personal branding
+Built for recruiters, clients, and collaborators to quickly understand who you are and what you build.
 
 ---
 
-**Built with ❤️ for showcasing amazing talent!**
+## 🌐 Overview
 
-*Feel free to customize, enhance, and make it your own!* 🎉
+This portfolio mimics the **LinkedIn user experience**, combining a familiar UI with rich interactivity.  
+It presents your professional profile, projects, blogs, and contact options in a single-page, frontend-only application.
+
+> **Built with passion by Jayanta Mardi**  
+> Full Stack Developer specializing in **ASP.NET Core, Angular, and PostgreSQL**
+
+---
+
+## ✨ Key Features
+
+### 🎨 Design & UI
+- LinkedIn-inspired **three-column responsive layout**
+- Professional color palette with **LinkedIn Blue (#0a66c2)** as primary color
+- **Light / Dark mode toggle** with `localStorage` persistence
+- Smooth animations, hover effects, and transitions
+- Fully **mobile-responsive** design
+
+---
+
+### 👤 Profile Section
+- Profile card with banner and overlapping avatar
+- Clickable profile picture with **full-screen image viewer**
+- Profile stats (viewers, impressions)
+- Social media links:
+  - GitHub
+  - LinkedIn
+  - Instagram
+  - Facebook
+
+---
+
+### 📱 Navigation & Productivity Features
+- Top navigation bar:
+  - Home
+  - My Network
+  - Projects
+  - Messages
+- Quick Links sidebar for fast access
+- Smart global search to filter posts and content
+- Keyboard shortcuts:
+  - `Ctrl + K` → Search
+  - `Ctrl + N` → New Post
+  - `Esc` → Close modals
+
+---
+
+## 📝 Content Sections
+
+### 📰 Feed Posts
+- 9 dynamic posts:
+  - 6 Project showcases
+  - 3 Blog / Article posts
+- Like, Comment, Share interactions
+- Project posts include:
+  - Live Demo links
+  - GitHub repository links
+- Achievement and article highlights
+
+---
+
+### 🪟 Interactive Modals
+- **About Me** – Bio, technical skills, leadership experience
+- **Experience** – 4 professional roles with achievements
+- **Education** – Academic background
+- **Blog & Articles** – Full article reader with formatting
+- **Resume** – View & download (Google Drive integration)
+- **Contact** – EmailJS-powered contact form
+
+---
+
+## 💼 Projects Showcase
+
+Featured projects include:
+
+- **Community Events India**  
+  _Angular, ASP.NET Core, PostgreSQL_
+
+- **Web Tools Collection**  
+  _JavaScript utility tools_
+
+- **Job Notifier**  
+  _Python automation project_
+
+- **Tritoybox**  
+  _MERN stack e-commerce platform_
+
+- **Fun Proposal**  
+  _Creative web application_
+
+- **ePension Platform**  
+  _Government-grade system achievement_
+
+---
+
+## 📚 Blog & Articles
+
+Full-length technical articles with professional formatting:
+
+- **An Ultimate Guide to Web Application Development**
+- **Cybersecurity in Modern Applications**
+- **Fix HP Pavilion WiFi Issues in 5 Minutes**
+
+---
+
+## 🛠️ Technical Stack
+
+### Frontend
+- HTML5
+- CSS3
+- Vanilla JavaScript
+
+### Styling
+- Custom CSS with CSS variables
+- Inter font family
+
+### Integrations
+- **EmailJS** – Contact form handling
+- **Google Drive** – Resume hosting
+- **Font Awesome 6.4.0** – Icons
+
+### Architecture
+- Event-driven, **modal-based design**
+- No backend required
+
+---
+
+## ✨ Interactive Enhancements
+- AI-powered **Chat Assistant** for visitor Q&A
+- Full-screen **Article Viewer**
+- Profile Image Zoom Viewer
+- Smooth scrolling between sections
+- Click-to-profile (avatar/name opens About modal)
+
+---
+
+## 📧 Contact Integration
+- EmailJS-based contact form
+- Client-side validation
+- Success and error notifications
+- Contact details display
+
+---
+
+## 🎯 User Experience & Performance
+- Fast loading with optimized assets
+- Keyboard accessibility & ARIA labels
+- SEO-friendly structure
+- Cross-browser compatibility
+- Professional presentation for recruiters & clients
+
+---
+
+## 📊 Right Sidebar Features
+- About summary
+- Top skills showcase
+- Recent articles preview
+- Activity timeline
+- Footer with quick links
+
+---
+
+## 🎯 Ideal For
+- Software Developers & Engineers
+- Job Seekers in Tech
+- Freelancers & Consultants
+- Students building professional portfolios
+- Anyone seeking a modern web presence
+
+---
+
+## ✅ Highlights
+- ✔ LinkedIn-style professional UI
+- ✔ Fully frontend (no backend required)
+- ✔ Easy to customize & maintain
+- ✔ Interactive & engaging UX
+- ✔ Mobile responsive
+- ✔ Real-world service integrations
+
+---
+
+## 🚀 Getting Started
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/jayantajm1/jayantajm1protfolio.git
