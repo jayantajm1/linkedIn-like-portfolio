@@ -93,7 +93,11 @@
             />
           </div>
           <div class="profile-info">
-            <div class="profile-avatar">
+            <div
+              class="profile-avatar"
+              onclick="openProfileImageViewer()"
+              title="Click to view profile picture"
+            >
               <img src="assets/images/index.jpg" alt="Jayanta Mardi" />
             </div>
             <h3 class="profile-name">Jayanta Mardi</h3>
@@ -115,13 +119,23 @@
               <span class="stat-value">5,678</span>
             </div>
           </div>
-          <a href="#profile" class="view-profile-btn">View Profile</a>
+          <a
+            href="#profile"
+            class="view-profile-btn"
+            onclick="event.preventDefault(); openAboutModal();"
+          >
+            View Profile
+          </a>
         </div>
 
         <!-- Quick Links Card -->
         <div class="quick-links-card card">
           <h4>Quick Links</h4>
-          <a href="#about" class="quick-link">
+          <a
+            href="#about"
+            class="quick-link"
+            onclick="event.preventDefault(); openAboutModal();"
+          >
             <i class="fas fa-user"></i>
             <span>About Me</span>
           </a>
@@ -133,7 +147,11 @@
             <i class="fas fa-briefcase"></i>
             <span>Experience</span>
           </a>
-          <a href="#skills" class="quick-link">
+          <a
+            href="#skills"
+            class="quick-link"
+            onclick="event.preventDefault(); scrollToSection('skills-section');"
+          >
             <i class="fas fa-code"></i>
             <span>Skills</span>
           </a>
@@ -173,7 +191,7 @@
       </aside>
 
       <!-- Main Feed -->
-      <main class="feed-container">
+      <main class="feed-container" id="feed-section">
         <!-- Create Post Card -->
         <div class="create-post-card card">
           <div class="create-post-input">
@@ -207,7 +225,7 @@
         </div>
 
         <!-- Feed Posts -->
-        <div id="feed-posts">
+        <div id="feed-posts" class="projects-section">
           <!-- Posts will be dynamically loaded here -->
         </div>
       </main>
@@ -215,7 +233,7 @@
       <!-- Right Sidebar -->
       <aside class="right-sidebar">
         <!-- About Card -->
-        <div class="about-card card">
+        <div class="about-card card" id="about-section">
           <h4>About</h4>
           <p>
             Full Stack Developer specializing in ASP.NET Core, Angular, and
@@ -239,7 +257,7 @@
         </div>
 
         <!-- Skills Card -->
-        <div class="skills-card card">
+        <div class="skills-card card" id="skills-section">
           <h4>Top Skills</h4>
           <div class="skill-tags">
             <span class="skill-tag">ASP.NET Core</span>
@@ -313,10 +331,24 @@
 
         <!-- Footer -->
         <div class="footer-links">
-          <a href="#about">About</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#terms">Terms</a>
-          <a href="#contact">Contact</a>
+          <a href="#about" onclick="event.preventDefault(); openAboutModal();"
+            >About</a
+          >
+          <a
+            href="#privacy"
+            onclick="event.preventDefault(); alert('Privacy Policy: Your data is secure and never shared with third parties.');"
+            >Privacy</a
+          >
+          <a
+            href="#terms"
+            onclick="event.preventDefault(); alert('Terms of Service: By using this portfolio, you agree to professional conduct standards.');"
+            >Terms</a
+          >
+          <a
+            href="#contact"
+            onclick="event.preventDefault(); openContactModal();"
+            >Contact</a
+          >
           <p class="copyright">&copy; 2025 Jayanta Mardi</p>
         </div>
       </aside>
@@ -855,7 +887,11 @@
                     <span class="tag">Angular.js</span>
                     <span class="tag">.Net Core</span>
                   </div>
-                  <a href="#web-dev-blog" class="btn-link">
+                  <a
+                    href="#"
+                    class="btn-link"
+                    onclick="event.preventDefault(); openArticleViewer('web-dev');"
+                  >
                     Read Full Article <i class="fas fa-arrow-right"></i>
                   </a>
                 </div>
@@ -890,7 +926,11 @@
                     <span class="tag">Best Practices</span>
                     <span class="tag">DevSecOps</span>
                   </div>
-                  <a href="#cyber-security-blog" class="btn-link">
+                  <a
+                    href="#"
+                    class="btn-link"
+                    onclick="event.preventDefault(); openArticleViewer('cyber-security');"
+                  >
                     Read Full Article <i class="fas fa-arrow-right"></i>
                   </a>
                 </div>
@@ -924,7 +964,11 @@
                     <span class="tag">Windows</span>
                     <span class="tag">Networking</span>
                   </div>
-                  <a href="#hp-wifi-fixer" class="btn-link">
+                  <a
+                    href="#"
+                    class="btn-link"
+                    onclick="event.preventDefault(); openArticleViewer('hp-wifi');"
+                  >
                     Read Full Article <i class="fas fa-arrow-right"></i>
                   </a>
                 </div>
@@ -962,14 +1006,14 @@
                 class="btn-primary"
                 download
               >
-                <i class="fas fa-download"></i> Download Resume
+                <i class="fas fa-download"></i> Download
               </a>
               <a
                 href="https://drive.google.com/file/d/1Ivwhtr9i3UUAKlgM_KrfVdGqfxyYm1DS/view?usp=sharing"
                 target="_blank"
                 class="btn-secondary"
               >
-                <i class="fas fa-eye"></i> View Online
+                <i class="fas fa-eye"></i> View
               </a>
             </div>
           </div>
@@ -1012,6 +1056,127 @@
               >.
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Viewer Modal -->
+    <div id="articleViewerModal" class="modal">
+      <div class="modal-content modal-article">
+        <div class="modal-header article-header">
+          <button class="close-modal" onclick="closeArticleViewer()">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body article-body" id="articleContent">
+          <!-- Article content will be dynamically loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- About Me Modal -->
+    <div id="aboutModal" class="modal">
+      <div class="modal-content modal-large">
+        <div class="modal-header">
+          <h2><i class="fas fa-user"></i> About Me</h2>
+          <button class="close-modal" onclick="closeAboutModal()">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="about-modal-content">
+            <div class="about-modal-image">
+              <img src="assets/images/index.jpg" alt="Jayanta Mardi" />
+            </div>
+            <div class="about-modal-text">
+              <h3>Software Developer | Computer Science Graduate</h3>
+              <p>
+                I'm a Full Stack Developer specializing in
+                <strong>ASP.NET Core</strong>, <strong>Angular</strong>, and
+                <strong>PostgreSQL</strong>, with a strong focus on backend
+                engineering, clean API design, and secure system architecture. I
+                enjoy building scalable applications, improving performance, and
+                implementing reliable, production-grade features used by
+                thousands of users.
+              </p>
+              <p>
+                I work with modern technologies such as
+                <strong>microservices</strong>, <strong>RabbitMQ</strong>,
+                <strong>Docker</strong>, and <strong>OpenTelemetry</strong>, and
+                follow principles of <strong>clean architecture</strong>,
+                testing, and high-quality software craftsmanship.
+              </p>
+              <p>
+                I also bring leadership experience from serving as
+                <strong>Design Lead at ByteMonk-GTC</strong>, where I
+                contributed to community events, hackathons, and collaborative
+                tech initiatives. My goal is to grow as a strong Backend / Full
+                Stack .NET Engineer and continue building impactful systems at
+                scale.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/mardijm/"
+                target="_blank"
+                class="btn-primary"
+              >
+                <i class="fab fa-linkedin"></i> Connect on LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <!-- Skills Section -->
+          <div class="about-skills-section">
+            <h3><i class="fas fa-code"></i> Technical Skills</h3>
+            <div class="skills-grid">
+              <div class="skill-category-modal">
+                <h4>Languages</h4>
+                <p>C, C++, C#, Java, Python, JavaScript</p>
+              </div>
+              <div class="skill-category-modal">
+                <h4>Frontend</h4>
+                <p>HTML, CSS, Bootstrap, Tailwind, JavaScript, Angular</p>
+              </div>
+              <div class="skill-category-modal">
+                <h4>Backend</h4>
+                <p>Node.js, ASP.NET Core, Docker, EF Core</p>
+              </div>
+              <div class="skill-category-modal">
+                <h4>Database</h4>
+                <p>SQL, PostgreSQL, Redis</p>
+              </div>
+              <div class="skill-category-modal">
+                <h4>Tools</h4>
+                <p>
+                  VS Code, Visual Studio, PgAdmin, Git, GitHub Desktop, Docker
+                  Desktop
+                </p>
+              </div>
+              <div class="skill-category-modal">
+                <h4>Core Subjects</h4>
+                <p>
+                  Database Management System, Operating System, Computer
+                  Networks
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Image Viewer Modal -->
+    <div id="profileImageViewer" class="image-viewer-modal">
+      <div class="image-viewer-content">
+        <button class="image-viewer-close" onclick="closeProfileImageViewer()">
+          &times;
+        </button>
+        <img
+          src="assets/images/index.jpg"
+          alt="Jayanta Mardi - Profile Picture"
+        />
+        <div class="image-viewer-info">
+          <h3>Jayanta Mardi</h3>
+          <p>Software Developer | ASP.NET Core | Angular | PostgreSQL</p>
         </div>
       </div>
     </div>
