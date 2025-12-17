@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Cache Control Meta Tags -->
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>Jayanta Mardi - Portfolio</title>
+    <link rel="icon" href="assets/images/index.jpg" type="image/x-icon" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Main Stylesheet with cache busting -->
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.2" />
+
+    <!-- EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <div class="top-bar-left">
+          <div class="top-bar-item">
+            <i class="fas fa-envelope"></i>
+            <span>jayantaofficial84@gmail.com</span>
+          </div>
+          <div class="top-bar-item">
+            <i class="fas fa-phone"></i>
+            <span>+91**********</span>
+          </div>
+        </div>
+        <div class="top-bar-right">
+          <div class="social-links">
+            <a href="https://www.facebook.com/metjayanta" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com/jayantajm1" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mardijm/"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/jayantajm1" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <!-- Theme Toggle Button -->
+            <button
+              class="theme-toggle"
+              onclick="toggleTheme()"
+              aria-label="Toggle Theme"
+            >
+              <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header>
+      <nav>
+        <div class="logo">Portfo<span>lio</span></div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <!-- <li><a href="#skills">Skills</a></li> -->
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content" data-aos="fade-up">
+        <h4>Hello, My Name is</h4>
+        <h1>Jayanta Mardi<span class="typing-animation"></span></h1>
+        <h3>I am a Software Developer.</h3>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn-primary">Get In Touch</a>
+          <div class="resume-dropdown">
+            <button class="btn-secondary" id="resume-btn">
+              <i class="fas fa-download"></i> Download Resume
+            </button>
+            <div class="resume-options" id="resume-options">
+              <a
+                href="https://drive.google.com/uc?export=download&id=1Ivwhtr9i3UUAKlgM_KrfVdGqfxyYm1DS"
+                class="resume-option"
+              >
+                <i class="fas fa-download"></i> Download
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1Ivwhtr9i3UUAKlgM_KrfVdGqfxyYm1DS/view?usp=sharing"
+                target="_blank"
+                class="resume-option"
+              >
+                <i class="fas fa-eye"></i> View Online
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about" data-aos="fade-up">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-image" data-aos="fade-right">
+            <div class="image-wrapper">
+              <img src="assets/images/index.jpg" alt="Jayanta Mardi" />
+            </div>
+          </div>
+          <div class="about-text" data-aos="fade-left">
+            <h2>About Me</h2>
+            <h5>Software Developer | Computer Science Graduate</h5>
+            <p>
+              I’m a Full Stack Developer specializing in <b>ASP.NET Core</b>,
+              <b>Angular</b>, and <b>PostgreSQL</b>, with a strong focus on
+              backend engineering, clean API design, and secure system
+              architecture. I enjoy building scalable applications, improving
+              performance, and implementing reliable, production-grade features
+              used by thousands of users. I work with modern technologies such
+              as <b>microservices</b>, <b>RabbitMQ</b>, <b>Docker</b>, and
+              <b>OpenTelemetry</b>, and follow principles of
+              <b>clean architecture</b>, testing, and high-quality software
+              craftsmanship. I also bring leadership experience from serving as
+              <b>Design Lead at ByteMonk-GTC</b>, where I contributed to
+              community events, hackathons, and collaborative tech initiatives.
+              My goal is to grow as a strong Backend / Full Stack .NET Engineer
+              and continue building impactful systems at scale.
+            </p>
+
+            <a href="https://www.linkedin.com/in/mardijm/" class="btn-primary">
+              Let's Talk
+            </a>
+          </div>
+        </div>
+
+        <!-- Skills, Experience, Education Tabs -->
+        <div class="about-tabs" data-aos="fade-up">
+          <div class="tabs-header">
+            <button class="tab-btn active" data-tab="skills-tab">Skills</button>
+            <button class="tab-btn" data-tab="experience-tab">
+              Experience
+            </button>
+            <button class="tab-btn" data-tab="education-tab">Education</button>
+          </div>
+
+          <div class="tabs-content">
+            <!-- Skills Tab -->
+            <div class="tab-pane active" id="skills-tab">
+              <div class="skills-categories">
+                <div class="skill-category">
+                  <h4><span class="category-label">Languages:</span></h4>
+                  <p>C,C++,C#, Java, Python, JavaScript</p>
+                </div>
+                <div class="skill-category">
+                  <h4><span class="category-label">Frontend:</span></h4>
+                  <p>HTML, CSS, Bootstrap, Tailwind, JavaScript,Angular</p>
+                </div>
+                <div class="skill-category">
+                  <h4><span class="category-label">Backend:</span></h4>
+                  <p>Node.js,ASP .NET Core, Docker, EF Core</p>
+                </div>
+                <div class="skill-category">
+                  <h4><span class="category-label">Database:</span></h4>
+                  <p>SQL, PostgreSQL, Redis</p>
+                </div>
+                <div class="skill-category">
+                  <h4><span class="category-label">Tools:</span></h4>
+                  <p>
+                    VS Code, Visual Studio, PgAdmin, Git, Github desktop, Docker
+                    Desktop
+                  </p>
+                </div>
+                <div class="skill-category">
+                  <h4><span class="category-label">Core Subjects:</span></h4>
+                  <p>
+                    DataBase Management System, Operating System, Computer
+                    Networks
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience Tab -->
+            <div class="tab-pane" id="experience-tab">
+              <div class="timeline-list">
+                <div class="timeline-entry">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content-info">
+                    <h4>Software Developer</h4>
+                    <p class="company">
+                      National Informatics Centre (NIC), Kolkata
+                    </p>
+                    <p class="duration">June 2025 - Present</p>
+                    <p class="description">
+                      Building secure and scalable e-Governance applications
+                      using
+                      <b>ASP.NET Core</b>, <b>Angular</b>, and
+                      <b>PostgreSQL</b>. Engineered
+                      <b>100+ production APIs</b> across platforms like
+                      ePension, ePanchayat, and JIT, serving
+                      <b>20,000+ users</b>. Improved backend performance by
+                      <b>40%</b> through EF Core optimization, caching, and
+                      refactoring of high-load service logic. Designed
+                      enterprise-grade authentication with
+                      <b>AES-encrypted JWT middleware</b> and claim-based
+                      authorization, increasing API security by <b>60%</b>.
+                      Built modular microservices with ASP.NET Core, RabbitMQ,
+                      and PostgreSQL, improving system scalability and
+                      reliability. Integrated <b>OpenTelemetry</b>, Prometheus,
+                      Grafana, and Loki for full-stack observability and faster
+                      debugging, reducing MTTR significantly. Reduced defects by
+                      <b>30%</b> through robust validation, exception handling,
+                      and automated testing. Collaborated with a
+                      <b>15-member engineering team</b> on architecture
+                      decisions, code reviews, and CI/CD improvements.
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-entry">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content-info">
+                    <h4>Software Developer Intern</h4>
+                    <p class="company">National Informatics Centre (NIC)</p>
+                    <p class="duration">September 2024 - May 2025</p>
+                    <p class="description">
+                      Contributed to key modules of <b>ePanchayat</b> and
+                      <b>User Management</b>, supporting large-scale governance
+                      workflows. Built and optimized
+                      <b>ASP.NET Core APIs</b> for fund management, local
+                      governance, and secure user access using <b>JWT</b> and
+                      <b>claim-based authorization</b>. Improved system
+                      reliability by implementing validation layers,
+                      performance-focused SQL queries, and reusable service
+                      components. Worked closely with senior developers in an
+                      agile environment, strengthening skills in backend
+                      engineering, API security, and scalable system design.
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-entry">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content-info">
+                    <h4>Ethical Hacking and Penetration Testing Intern</h4>
+                    <p class="company">
+                      Centre for Development of Advanced Computing
+                      (C-DAC)-Noida(Remote)
+                    </p>
+                    <p class="duration">August 2024 - October 2024</p>
+                    <p class="description">
+                      Completed hands-on training in <b>ethical hacking</b>,
+                      vulnerability assessment, and system exploitation
+                      techniques. Gained practical experience using tools like
+                      <b>Metasploit</b>, <b>Nmap</b>, and <b>Wireshark</b> for
+                      network scanning, penetration testing, and security
+                      auditing. Worked on identifying real-world cyber threats,
+                      analyzing attack vectors, and applying defensive
+                      strategies — strengthening foundational knowledge in
+                      cybersecurity and secure software development.
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-entry">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content-info">
+                    <h4>Design Lead</h4>
+                    <p class="company">ByteMonk-GTC Tech Club</p>
+                    <p class="duration">2023 - 2024</p>
+                    <p class="description">
+                      Led the design team for ByteMonk-GTC, contributing to the
+                      planning and execution of major campus tech events,
+                      seminars, and hackathons. Designed visual branding,
+                      promotional materials, and event assets, helping increase
+                      student participation and engagement. Collaborated with
+                      organizers to streamline event workflows, strengthening
+                      <b>leadership</b>, <b>team coordination</b>, and
+                      <b>creative problem-solving</b>
+                      skills while supporting a thriving developer community.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Education Tab -->
+            <div class="tab-pane" id="education-tab">
+              <div class="timeline-list">
+                <div class="timeline-entry">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content-info">
+                    <h4>
+                      Bachelor of Technology in Computer Science(MAKAUT, W.B)
+                    </h4>
+                    <p class="company">
+                      Government College of Engineering and Ceramic Technology
+                    </p>
+                    <p class="duration">2021 - 2025</p>
+                    <p class="description">
+                      Completed Computer Science Engineering with focus on
+                      software development, system design, and modern web
+                      technologies.
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-entry">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content-info">
+                    <h4>Higher Secondary (WBCHSE)</h4>
+                    <p class="company">
+                      Aiho High School H:S, Malda,West Bengal
+                    </p>
+                    <p class="duration">2017 - 2019</p>
+                    <p class="description">
+                      Completed higher secondary education with Science stream.
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-entry">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content-info">
+                    <h4>Secondary Education (WBBSE)</h4>
+                    <p class="company">
+                      Aiho High School H:S, Malda,West Bengal
+                    </p>
+                    <p class="duration">2017</p>
+                    <p class="description">
+                      Completed higher secondary education with Science stream.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <!-- <section class="skills" id="skills" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">My Skills</h2>
+        </div>
+        <div class="skills-content">
+          <div class="skill-category">
+            <h4><span class="category-label">Languages:</span></h4>
+            <p>Java, Python, C++, C#, JavaScript</p>
+          </div>
+          <div class="skill-category">
+            <h4><span class="category-label">Frontend:</span></h4>
+            <p>HTML, CSS, Bootstrap, Tailwind, JavaScript, React JS</p>
+          </div>
+          <div class="skill-category">
+            <h4><span class="category-label">Backend:</span></h4>
+            <p>
+              Node.js, Express.js, .NET Core, Docker, Springboot, EF Core, JDBC
+              and Hibernate
+            </p>
+          </div>
+          <div class="skill-category">
+            <h4><span class="category-label">Database:</span></h4>
+            <p>SQL, MongoDB, PostgreSQL, Redis</p>
+          </div>
+          <div class="skill-category">
+            <h4><span class="category-label">Tools:</span></h4>
+            <p>
+              VS Code, Visual Studio, JMeter, PgAdmin, Git, Github desktop,
+              Docker Desktop, WinSCP, MobaXterm
+            </p>
+          </div>
+          <div class="skill-category">
+            <h4><span class="category-label">Core Subjects:</span></h4>
+            <p>
+              DataBase Management System, Operating System, Computer Networks
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Services Section -->
+    <section class="services" id="services" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Services</h2>
+          <p class="section-subtitle">
+            We provide cutting-edge solutions tailored to your needs, combining
+            innovation with expertise to deliver exceptional results.
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">💻</div>
+            <h3>Software Development</h3>
+            <p>
+              Every website should be built with two primary goals: Firstly it
+              needs to work across all devices. Secondly, it needs to be fast as
+              possible.
+            </p>
+            <a href="#" class="btn-link">Read More</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">✍️</div>
+            <h3>Content Writing</h3>
+            <p>
+              Content writing, editing, and publishing content in a digital
+              format or social media
+            </p>
+            <a href="#" class="btn-link">Read More</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔒</div>
+            <h3>Cyber Security</h3>
+            <p>
+              Protecting digital assets and ensuring data security through
+              comprehensive cybersecurity solutions
+            </p>
+            <a href="#" class="btn-link">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">My Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="assets/images/community-event-ind.jpg"
+                alt="community-event-ind"
+                onerror="this.style.display='none'"
+              />
+              <div class="project-overlay">
+                <a
+                  href="https://community-event.netlify.app"
+                  class="project-link"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a
+                  href="https://github.com/jayantajm1/community-event-ind-ui"
+                  class="project-github"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Community Events India</h3>
+              <p>
+                A community-driven events platform where community leaders/hosts
+                can create events (with photos, description, registration),
+                members join events with their community ID, comment and ask
+                questions, search events by location/type, and where admins
+                moderate and close events after completion.
+              </p>
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Angular</span>
+                <span>Asp.Net Core</span>
+                <span>PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="assets/images/webtools.jpg"
+                alt="Web Tools"
+                onerror="this.style.display='none'"
+              />
+              <div class="project-overlay">
+                <a
+                  href="https://jayantajm1.github.io/web-tools/"
+                  class="project-link"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a
+                  href="https://github.com/jayantajm1/web-tools"
+                  class="project-github"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Web Tools Collection</h3>
+              <p>
+                A collection of useful web-based tools including converters,
+                generators, and utilities for developers and designers.
+              </p>
+              <div class="project-tech">
+                <span>JavaScript</span>
+                <span>HTML</span>
+                <span>CSS</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="assets/images/job-notifier.jpg"
+                alt="Job Notifier"
+                onerror="this.style.display='none'"
+              />
+              <div class="project-overlay">
+                <a
+                  href="https://github.com/jayantajm1/Job-Notifier"
+                  class="project-link"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a
+                  href="https://github.com/jayantajm1/Job-Notifier"
+                  class="project-github"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Job Notifier</h3>
+              <p>
+                An automated job notification system that alerts users about new
+                job postings based on their preferences and criteria.
+              </p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Web Scraping</span>
+                <span>Automation</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="assets/images/tritoybox.jpg"
+                alt="Tritoybox"
+                onerror="this.style.display='none'"
+              />
+              <div class="project-overlay">
+                <a
+                  href="https://jayantajm1.github.io/TriToyBox/"
+                  class="project-link"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a
+                  href="https://github.com/jayantajm1/TriToyBox"
+                  class="project-github"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Tritoybox</h3>
+              <p>
+                A comprehensive toolkit application providing various utility
+                tools and features for daily productivity and development tasks.
+              </p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="assets/images/fun-proposal.jpg"
+                alt="Fun Proposal"
+                onerror="this.style.display='none'"
+              />
+              <div class="project-overlay">
+                <a
+                  href="https://fun-project-85yv.onrender.com/"
+                  class="project-link"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a
+                  href="https://github.com/jayantajm1/fun-project"
+                  class="project-github"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Fun Proposal</h3>
+              <p>
+                An interactive and creative web application designed for making
+                memorable proposals with animations and engaging UI elements.
+              </p>
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section class="timeline" id="experience" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">My Journey</h2>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-date">2024 - Present</div>
+            <div class="timeline-content">
+              <h3>Software Developer</h3>
+              <h4>National Informatics Centre (NIC), Kolkata</h4>
+              <p>
+                Working on scalable web applications using Angular, ASP.NET
+                Core, and PostgreSQL.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-date">2021 - 2025</div>
+            <div class="timeline-content">
+              <h3>Computer Science Engineering</h3>
+              <h4>College Graduate</h4>
+              <p>
+                Completed Computer Science Engineering with focus on software
+                development and system design.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-date">2023 - 2024</div>
+            <div class="timeline-content">
+              <h3>Design Lead</h3>
+              <h4>ByteMonk-GTC Tech Club</h4>
+              <p>
+                Enhanced leadership, event management, and creative design
+                skills while leading the design team.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">What People Say</h2>
+        </div>
+        <div class="testimonials-slider">
+          <div class="testimonial-item">
+            <div class="testimonial-content">
+              <p>
+                "Jayanta is an exceptional developer with great attention to
+                detail. His work on our project exceeded expectations."
+              </p>
+              <div class="testimonial-author">
+                <img src="assets/images/testimonial.jpg" alt="Client" />
+                <div>
+                  <h4>John Doe</h4>
+                  <span>CEO, Tech Company</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-content">
+              <p>
+                "Professional, reliable, and delivers high-quality work. Highly
+                recommend for any development project."
+              </p>
+              <div class="testimonial-author">
+                <img src="assets/images/testimonial.jpg" alt="Client" />
+                <div>
+                  <h4>Jane Smith</h4>
+                  <span>Project Manager</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Latest Blog Posts</h2>
+        </div>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-image">
+              <img
+                src="assets/images/web-app-blog.jpg"
+                alt="An Ultimate Guide to Web Application Development"
+              />
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-date">Nov 28, 2024</span>
+                <span class="blog-category">Technology</span>
+              </div>
+              <h3>An Ultimate Guide to Web Application Development</h3>
+              <p>
+                Web applications are pivotal for business growth, efficiency,
+                and user experience. This guide explores their significance as
+                revenue drivers and business differentiators for CEOs and
+                business owners.
+              </p>
+              <a href="#web-dev-blog" class="btn-link">Read More</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-image">
+              <img
+                src="assets/images/cyber-security-blog.jpg"
+                alt="Cybersecurity in Modern Applications"
+              />
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-date">Nov 15, 2024</span>
+                <span class="blog-category">Security</span>
+              </div>
+              <h3>Cybersecurity in Modern Applications</h3>
+              <p>
+                Essential cybersecurity practices every developer should know to
+                build secure, resilient applications and protect against modern
+                threats.
+              </p>
+              <a href="#cyber-security-blog" class="btn-link">Read More</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-image">
+              <img
+                src="assets/images/hp-wifi-fixer.jpg"
+                alt="HP WiFi Fixer Pro"
+              />
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-date">Nov 16, 2025</span>
+                <span class="blog-category">Tools</span>
+              </div>
+              <h3>Fix HP Pavilion WiFi Issues in 5 Minutes</h3>
+              <p>
+                HP WiFi Fixer Pro automates driver cleanup and network resets to
+                quickly restore connectivity on HP Pavilion laptops.
+              </p>
+              <a href="#hp-wifi-fixer" class="btn-link">Read More</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Post Detail Section -->
+    <section class="blog-detail" id="web-dev-blog" style="display: none">
+      <div class="container">
+        <div class="blog-detail-header">
+          <span class="blog-category-tag">Technology</span>
+          <h1>An Ultimate Guide to Web Application Development</h1>
+          <div class="blog-meta-info">
+            <div class="author-info">
+              <img
+                src="assets/images/index.jpg"
+                alt="Jayanta Mardi"
+                class="author-avatar"
+              />
+              <div>
+                <h4>Jayanta Mardi</h4>
+                <p class="verified">✓ Verified Expert in Engineering</p>
+              </div>
+            </div>
+            <span class="blog-updated">Updated: Nov 28, 2024</span>
+          </div>
+          <p class="author-bio">
+            Jayanta Mardi is an expert in software architecture, web tech & API
+            solutions.
+          </p>
+          <div class="expertise-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Angular.js</span>
+            <span class="tag">.Net core</span>
+          </div>
+        </div>
+
+        <div class="blog-detail-image">
+          <img
+            src="assets/images/web-app-blog.jpg"
+            alt="Guide to Web Application Development"
+          />
+        </div>
+
+        <div class="blog-detail-content">
+          <div class="quick-overview">
+            <h3>Quick Overview:</h3>
+            <p>
+              Web applications are pivotal for business growth, efficiency, and
+              user experience. This guide explores their significance as revenue
+              drivers and business differentiators, essential for CEOs and
+              business owners aiming to thrive in the digital landscape. Let's
+              innovate together and secure the future of your business!
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>What are Web Applications?</h2>
+            <p>
+              Web applications are software programs that run on web servers and
+              are accessed through web browsers. Unlike traditional desktop
+              applications, web apps don't need to be downloaded or installed.
+              They provide dynamic, interactive experiences and can be accessed
+              from any device with an internet connection.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Key Benefits of Web Applications</h2>
+            <ul>
+              <li>
+                <strong>Accessibility:</strong> Access from anywhere, anytime,
+                on any device
+              </li>
+              <li>
+                <strong>Cost-Effective:</strong> No installation required,
+                reduced maintenance costs
+              </li>
+              <li>
+                <strong>Scalability:</strong> Easy to scale based on user demand
+              </li>
+              <li>
+                <strong>Real-time Updates:</strong> Instant updates without user
+                intervention
+              </li>
+              <li>
+                <strong>Cross-Platform:</strong> Works on Windows, Mac, Linux,
+                mobile devices
+              </li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2>Modern Web Development Technologies</h2>
+            <h3>Frontend Technologies:</h3>
+            <p>
+              Modern frontend development utilizes frameworks like React,
+              Angular, and Vue.js to create responsive, fast, and interactive
+              user interfaces. HTML5, CSS3, and JavaScript ES6+ form the
+              foundation of web development.
+            </p>
+
+            <h3>Backend Technologies:</h3>
+            <p>
+              Backend development powers the server-side logic using
+              technologies like Node.js, ASP.NET Core, Python, Java Spring Boot,
+              and PHP. These technologies handle business logic, database
+              operations, and API development.
+            </p>
+
+            <h3>Databases:</h3>
+            <p>
+              Modern web applications use both SQL (PostgreSQL, MySQL) and NoSQL
+              (MongoDB, Redis) databases to store and manage data efficiently.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Best Practices for Web Application Development</h2>
+            <ol>
+              <li>
+                <strong>Security First:</strong> Implement authentication,
+                authorization, and data encryption
+              </li>
+              <li>
+                <strong>Performance Optimization:</strong> Minimize load times,
+                optimize assets, use caching
+              </li>
+              <li>
+                <strong>Responsive Design:</strong> Ensure compatibility across
+                all devices and screen sizes
+              </li>
+              <li>
+                <strong>User Experience:</strong> Focus on intuitive navigation
+                and user-friendly interfaces
+              </li>
+              <li>
+                <strong>Testing:</strong> Comprehensive testing including unit,
+                integration, and end-to-end tests
+              </li>
+              <li>
+                <strong>Documentation:</strong> Maintain clear documentation for
+                code and APIs
+              </li>
+            </ol>
+          </div>
+
+          <div class="content-section">
+            <h2>The Future of Web Applications</h2>
+            <p>
+              The future of web applications includes Progressive Web Apps
+              (PWAs), AI integration, serverless architecture, and enhanced
+              security measures. Businesses that invest in modern web
+              applications gain competitive advantages through improved
+              efficiency, customer satisfaction, and revenue growth.
+            </p>
+          </div>
+
+          <div class="cta-section">
+            <h3>Build Software Application to 3X Your Biz Growth</h3>
+            <p>
+              Ready to transform your business with a cutting-edge web
+              application?
+            </p>
+            <a href="#contact" class="btn-primary">Get Started Today</a>
+          </div>
+
+          <div class="blog-navigation">
+            <a href="#blog" class="btn-secondary">← Back to Blog</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cybersecurity Blog Post Detail Section -->
+    <section class="blog-detail" id="cyber-security-blog" style="display: none">
+      <div class="container">
+        <div class="blog-detail-header">
+          <span class="blog-category-tag">Security</span>
+          <h1>Cybersecurity in Modern Applications</h1>
+          <div class="blog-meta-info">
+            <div class="author-info">
+              <img
+                src="assets/images/index.jpg"
+                alt="Jayanta Mardi"
+                class="author-avatar"
+              />
+              <div>
+                <h4>Jayanta Mardi</h4>
+                <p class="verified">✓ Verified Expert in Engineering</p>
+              </div>
+            </div>
+            <span class="blog-updated">Updated: Nov 15, 2024</span>
+          </div>
+          <p class="author-bio">
+            Jayanta Mardi is an expert in software architecture, cybersecurity &
+            secure application development.
+          </p>
+          <div class="expertise-tags">
+            <span class="tag">Security</span>
+            <span class="tag">DevSecOps</span>
+            <span class="tag">Best Practices</span>
+          </div>
+        </div>
+
+        <div class="blog-detail-image">
+          <img
+            src="assets/images/cyber-security-blog.jpg"
+            alt="Cybersecurity in Modern Applications"
+          />
+        </div>
+
+        <div class="blog-detail-content">
+          <div class="quick-overview">
+            <h3>Quick Overview:</h3>
+            <p>
+              In today's digital landscape, cybersecurity is not just an
+              option—it's a necessity. This comprehensive guide explores
+              essential security practices, common vulnerabilities, and modern
+              defense strategies that every developer and business owner must
+              understand to protect their applications and user data from
+              evolving cyber threats.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Why Cybersecurity Matters</h2>
+            <p>
+              Cybersecurity threats are growing exponentially, with data
+              breaches, ransomware attacks, and security vulnerabilities
+              affecting businesses of all sizes. A single security incident can
+              result in financial losses, reputation damage, legal consequences,
+              and loss of customer trust. Implementing robust cybersecurity
+              measures is essential for protecting your business, your
+              customers, and your digital assets.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Common Security Threats</h2>
+            <h3>1. SQL Injection</h3>
+            <p>
+              Attackers exploit vulnerabilities in database queries to access,
+              modify, or delete sensitive data. Always use parameterized queries
+              and prepared statements to prevent SQL injection attacks.
+            </p>
+
+            <h3>2. Cross-Site Scripting (XSS)</h3>
+            <p>
+              Malicious scripts are injected into web pages viewed by other
+              users. Implement proper input validation and output encoding to
+              protect against XSS attacks.
+            </p>
+
+            <h3>3. Cross-Site Request Forgery (CSRF)</h3>
+            <p>
+              Attackers trick users into performing unwanted actions. Use CSRF
+              tokens and validate origin headers to prevent these attacks.
+            </p>
+
+            <h3>4. Authentication & Authorization Flaws</h3>
+            <p>
+              Weak passwords, broken authentication, and improper access
+              controls can lead to unauthorized access. Implement strong
+              authentication mechanisms, multi-factor authentication, and
+              role-based access control.
+            </p>
+
+            <h3>5. Data Exposure</h3>
+            <p>
+              Sensitive data transmitted or stored without proper encryption is
+              vulnerable to interception. Always use HTTPS, encrypt data at
+              rest, and follow data protection best practices.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Essential Security Best Practices</h2>
+            <ol>
+              <li>
+                <strong>Authentication & Authorization:</strong> Implement JWT
+                tokens, OAuth 2.0, and role-based access control (RBAC)
+              </li>
+              <li>
+                <strong>Data Encryption:</strong> Use TLS/SSL for data in
+                transit and AES encryption for data at rest
+              </li>
+              <li>
+                <strong>Input Validation:</strong> Validate and sanitize all
+                user inputs to prevent injection attacks
+              </li>
+              <li>
+                <strong>Security Headers:</strong> Implement CSP,
+                X-Frame-Options, HSTS, and other security headers
+              </li>
+              <li>
+                <strong>Regular Updates:</strong> Keep all dependencies,
+                frameworks, and libraries up to date
+              </li>
+              <li>
+                <strong>Logging & Monitoring:</strong> Implement comprehensive
+                logging and real-time security monitoring
+              </li>
+              <li>
+                <strong>Security Testing:</strong> Conduct regular penetration
+                testing and vulnerability assessments
+              </li>
+              <li>
+                <strong>Secure Configuration:</strong> Follow security hardening
+                guidelines for servers and databases
+              </li>
+            </ol>
+          </div>
+
+          <div class="content-section">
+            <h2>Implementing Secure Authentication</h2>
+            <p>
+              Modern applications require robust authentication mechanisms. Use
+              industry-standard protocols like OAuth 2.0, OpenID Connect, and
+              implement multi-factor authentication (MFA) for sensitive
+              operations. Store passwords using strong hashing algorithms like
+              bcrypt or Argon2, never plain text or weak hashing methods.
+            </p>
+            <h3>Key Authentication Features:</h3>
+            <ul>
+              <li>JWT (JSON Web Tokens) for stateless authentication</li>
+              <li>Refresh token rotation to prevent token theft</li>
+              <li>Session management with secure cookies</li>
+              <li>Account lockout mechanisms to prevent brute force attacks</li>
+              <li>Password complexity requirements and strength validation</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2>API Security</h2>
+            <p>
+              APIs are critical components of modern applications and require
+              special security attention. Implement rate limiting to prevent
+              abuse, use API keys and authentication tokens, validate all
+              inputs, and follow the principle of least privilege when designing
+              API permissions.
+            </p>
+            <h3>API Security Checklist:</h3>
+            <ul>
+              <li>Use HTTPS exclusively for all API communications</li>
+              <li>Implement OAuth 2.0 for API authentication</li>
+              <li>Rate limiting and throttling to prevent DDoS attacks</li>
+              <li>Input validation and schema validation</li>
+              <li>API versioning and deprecation strategies</li>
+              <li>Comprehensive API documentation with security guidelines</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2>Security Tools & Technologies</h2>
+            <p>
+              Leverage modern security tools to enhance your application's
+              security posture:
+            </p>
+            <ul>
+              <li>
+                <strong>Static Analysis:</strong> SonarQube, ESLint security
+                plugins
+              </li>
+              <li>
+                <strong>Dependency Scanning:</strong> Snyk, OWASP
+                Dependency-Check
+              </li>
+              <li>
+                <strong>Container Security:</strong> Docker security scanning,
+                Kubernetes security policies
+              </li>
+              <li>
+                <strong>WAF (Web Application Firewall):</strong> CloudFlare, AWS
+                WAF
+              </li>
+              <li>
+                <strong>Security Monitoring:</strong> Prometheus, Grafana, ELK
+                Stack
+              </li>
+              <li>
+                <strong>Penetration Testing:</strong> Burp Suite, OWASP ZAP
+              </li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2>DevSecOps: Security in Development</h2>
+            <p>
+              Integrate security into every phase of the software development
+              lifecycle. DevSecOps emphasizes automation, continuous security
+              testing, and collaboration between development, security, and
+              operations teams. This approach helps identify and fix security
+              issues early, reducing costs and improving overall security
+              posture.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Compliance & Regulations</h2>
+            <p>
+              Understanding and complying with security regulations is crucial
+              for modern applications. Familiarize yourself with GDPR (data
+              protection), HIPAA (healthcare), PCI DSS (payment cards), and
+              other relevant compliance standards for your industry. Implement
+              proper data governance, privacy policies, and audit trails to
+              ensure compliance.
+            </p>
+          </div>
+
+          <div class="cta-section">
+            <h3>Secure Your Application Today</h3>
+            <p>
+              Don't wait for a security breach to take action. Protect your
+              business and users now!
+            </p>
+            <a href="#contact" class="btn-primary">Get Security Consultation</a>
+          </div>
+
+          <div class="blog-navigation">
+            <a href="#blog" class="btn-secondary">← Back to Blog</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HP WiFi Fixer Blog Post Detail Section -->
+    <section class="blog-detail" id="hp-wifi-fixer" style="display: none">
+      <div class="container">
+        <div class="blog-detail-header">
+          <span class="blog-category-tag">Tools</span>
+          <h1>Fix HP Pavilion WiFi Issues in 5 Minutes</h1>
+          <div class="blog-meta-info">
+            <div class="author-info">
+              <img
+                src="assets/images/index.jpg"
+                alt="Jayanta Mardi"
+                class="author-avatar"
+              />
+              <div>
+                <h4>Jayanta Mardi</h4>
+                <p class="verified">✓ Verified Expert in Engineering</p>
+              </div>
+            </div>
+            <span class="blog-updated">Updated: Nov 16, 2025</span>
+          </div>
+          <p class="author-bio">
+            A simple one-click toolkit that automates WiFi driver cleanup and
+            reinstallation for HP Pavilion laptops—designed to save time and
+            avoid manual troubleshooting.
+          </p>
+          <div class="expertise-tags">
+            <span class="tag">Tools</span>
+            <span class="tag">Troubleshooting</span>
+            <span class="tag">Windows</span>
+          </div>
+        </div>
+
+        <div class="blog-detail-image">
+          <img
+            src="assets/images/hp-wifi-fixer.jpg"
+            alt="HP WiFi Fixer Pro"
+            onerror="this.src='assets/images/community-event-ind.jpg'"
+          />
+        </div>
+
+        <div class="blog-detail-content">
+          <div class="quick-overview">
+            <h3>Quick Overview:</h3>
+            <p>
+              HP WiFi Fixer Pro automates driver removal, driver-store cleanup,
+              network resets (Winsock/TCP-IP), and installs a fresh driver you
+              provide. Works offline and is safe to run with administrator
+              privileges.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Why HP Pavilion WiFi Fails</h2>
+            <p>
+              Driver conflicts after Windows updates, corrupted driver packages,
+              registry issues, and network stack corruption are the most common
+              causes. Manual fixes are time consuming and often incomplete.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>The Solution: HP WiFi Fixer Pro</h2>
+            <p>
+              This tool performs a complete cleanup and reinstallation process
+              in three phases: cleanup, network reset, and fresh installation.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h3>How to Use</h3>
+            <ol>
+              <li>
+                Download <code>HP_WiFi_Fixer_Pro.exe</code> from releases.
+              </li>
+              <li>
+                Download the correct driver from HP and rename it to
+                <code>wifi-driver.exe</code>.
+              </li>
+              <li>
+                Place both files together, right-click the fixer and
+                <strong>Run as administrator</strong>.
+              </li>
+            </ol>
+          </div>
+
+          <div class="content-section">
+            <h3>Troubleshooting & Safety</h3>
+            <p>
+              The tool creates logs and attempts to create a restore point. If
+              the WiFi adapter is still not found, verify driver file and check
+              Device Manager for unknown devices.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h3>Download</h3>
+            <p>
+              Get the latest release on GitHub:
+              <a
+                href="https://github.com/jayantajm1/hp-wifi-fixer/releases"
+                target="_blank"
+                rel="noopener"
+                >HP WiFi Fixer Pro Releases</a
+              >
+            </p>
+          </div>
+
+          <div class="cta-section">
+            <h3>Secure Your Application Today</h3>
+            <p>
+              Don't wait for a security breach to take action. Protect your
+              business and users now!
+            </p>
+            <a href="#contact" class="btn-primary">Get Security Consultation</a>
+          </div>
+
+          <div class="blog-navigation">
+            <a href="#blog" class="btn-secondary">← Back to Blog</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">
+            Let's discuss your project and bring your ideas to life
+          </p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Location</h4>
+                <p>Kolkata, West Bengal, India</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p>jayantaofficial84@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Phone</h4>
+                <p>+91**********</p>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <input
+                type="text"
+                name="from_name"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                name="from_email"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="subscribe" id="subscribe" data-aos="fade-up">
+      <div class="container">
+        <div class="subscribe-content">
+          <h2>Stay Updated</h2>
+          <p>
+            Subscribe to get notified about my latest projects and blog posts
+          </p>
+          <form class="subscribe-form">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit" class="btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-left">
+            <h3>Jayanta Mardi</h3>
+            <p>
+              Software Developer passionate about creating amazing digital
+              experiences.
+            </p>
+          </div>
+          <div class="footer-center">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-right">
+            <h4>Follow Me</h4>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/metjayanta"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://instagram.com/jayantajm1" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/mardijm/"
+                aria-label="LinkedIn"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/jayantajm1" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Jayanta Mardi. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container" id="chatbot">
+      <div class="chatbot-header">
+        <div class="chatbot-header-content">
+          <i class="fas fa-robot"></i>
+          <div>
+            <h4>Portfolio Assistant</h4>
+            <span class="status-online">Online</span>
+          </div>
+        </div>
+        <button class="chatbot-close" id="chatbot-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chatbot-messages" id="chatbot-messages">
+        <!-- Messages will be added here dynamically -->
+      </div>
+      <div class="chatbot-suggestions" id="chatbot-suggestions">
+        <button class="suggestion-btn" data-question="skills">
+          What are your skills?
+        </button>
+        <button class="suggestion-btn" data-question="experience">
+          Tell me about your experience
+        </button>
+        <button class="suggestion-btn" data-question="education">
+          What's your education?
+        </button>
+        <button class="suggestion-btn" data-question="projects">
+          Show me your projects
+        </button>
+        <button class="suggestion-btn" data-question="contact">
+          How can I contact you?
+        </button>
+      </div>
+      <div class="chatbot-input">
+        <input
+          type="text"
+          id="chatbot-input-field"
+          placeholder="Type a message..."
+        />
+        <button id="chatbot-send">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Chatbot Toggle Button -->
+    <button class="chatbot-toggle" id="chatbot-toggle">
+      <i class="fas fa-comments"></i>
+      <span class="chatbot-badge">1</span>
+    </button>
+
+    <!-- Scripts with cache busting -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/emailjs-config.js?v=1.0.1"></script>
+    <script src="assets/js/script.js?v=1.0.1"></script>
+  </body>
+</html>
