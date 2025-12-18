@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visitor Tracking Test</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        padding: 40px;
+        max-width: 800px;
+        width: 100%;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .status {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ccc;
+        animation: pulse 2s infinite;
+      }
+
+      .status.success {
+        background: #10b981;
+      }
+
+      .status.error {
+        background: #ef4444;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      .subtitle {
+        color: #666;
+        margin-bottom: 30px;
+      }
+
+      .test-section {
+        background: #f9fafb;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .test-section h3 {
+        color: #1f2937;
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+
+      .test-item {
+        padding: 12px;
+        background: white;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .test-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .test-label {
+        font-weight: 500;
+        color: #374151;
+      }
+
+      .test-value {
+        font-family: "Courier New", monospace;
+        color: #6366f1;
+        font-size: 14px;
+      }
+
+      .test-value.success {
+        color: #10b981;
+      }
+
+      .test-value.error {
+        color: #ef4444;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      button {
+        flex: 1;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .btn-primary {
+        background: #667eea;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #5568d3;
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background: #10b981;
+        color: white;
+      }
+
+      .btn-secondary:hover {
+        background: #059669;
+        transform: translateY(-2px);
+      }
+
+      .btn-danger {
+        background: #ef4444;
+        color: white;
+      }
+
+      .btn-danger:hover {
+        background: #dc2626;
+        transform: translateY(-2px);
+      }
+
+      .alert {
+        padding: 16px;
+        border-radius: 8px;
+        margin-top: 20px;
+        display: none;
+      }
+
+      .alert.success {
+        background: #d1fae5;
+        border: 2px solid #10b981;
+        color: #065f46;
+      }
+
+      .alert.error {
+        background: #fee2e2;
+        border: 2px solid #ef4444;
+        color: #991b1b;
+      }
+
+      .alert.show {
+        display: block;
+      }
+
+      .code-block {
+        background: #1f2937;
+        color: #10b981;
+        padding: 16px;
+        border-radius: 8px;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        overflow-x: auto;
+        margin-top: 15px;
+      }
+
+      .icon {
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        <span class="status" id="statusIndicator"></span>
+        Visitor Tracking Test
+      </h1>
+      <p class="subtitle">Verify that visitor tracking is working correctly</p>
+
+      <!-- Tracker Status -->
+      <div class="test-section">
+        <h3>📊 Tracker Status</h3>
+        <div class="test-item">
+          <span class="test-label">Visitor Tracker Loaded</span>
+          <span class="test-value" id="trackerLoaded">Checking...</span>
+        </div>
+        <div class="test-item">
+          <span class="test-label">Session ID</span>
+          <span class="test-value" id="sessionId">Checking...</span>
+        </div>
+        <div class="test-item">
+          <span class="test-label">Firebase Status</span>
+          <span class="test-value" id="firebaseStatus">Checking...</span>
+        </div>
+      </div>
+
+      <!-- Visitor Data -->
+      <div class="test-section">
+        <h3>👤 Current Visitor Info</h3>
+        <div class="test-item">
+          <span class="test-label">Browser</span>
+          <span class="test-value" id="browser">Detecting...</span>
+        </div>
+        <div class="test-item">
+          <span class="test-label">Device</span>
+          <span class="test-value" id="device">Detecting...</span>
+        </div>
+        <div class="test-item">
+          <span class="test-label">Screen Size</span>
+          <span class="test-value" id="screenSize">Detecting...</span>
+        </div>
+        <div class="test-item">
+          <span class="test-label">Language</span>
+          <span class="test-value" id="language">Detecting...</span>
+        </div>
+      </div>
+
+      <!-- Stored Data -->
+      <div class="test-section">
+        <h3>💾 Stored Data</h3>
+        <div class="test-item">
+          <span class="test-label">Total Visitors Stored</span>
+          <span class="test-value" id="totalVisitors">0</span>
+        </div>
+        <div class="test-item">
+          <span class="test-label">LocalStorage Available</span>
+          <span class="test-value" id="localStorageAvailable">Checking...</span>
+        </div>
+        <div class="test-item">
+          <span class="test-label">Last Visit</span>
+          <span class="test-value" id="lastVisit">Never</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="button-group">
+        <button class="btn-primary" onclick="runTests()">🔄 Rerun Tests</button>
+        <button class="btn-secondary" onclick="viewStoredData()">
+          📊 View Stored Data
+        </button>
+        <button class="btn-danger" onclick="clearData()">🗑️ Clear Data</button>
+      </div>
+
+      <!-- View Dashboard -->
+      <div class="button-group">
+        <button
+          class="btn-primary"
+          onclick="window.location.href='dashboard.html'"
+        >
+          📈 Open Dashboard
+        </button>
+        <button
+          class="btn-secondary"
+          onclick="window.location.href='index.html'"
+        >
+          🏠 Back to Portfolio
+        </button>
+      </div>
+
+      <!-- Alert Messages -->
+      <div class="alert" id="alertBox"></div>
+
+      <!-- Data Display -->
+      <div id="dataDisplay"></div>
+    </div>
+
+    <script>
+      // Run tests on page load
+      document.addEventListener("DOMContentLoaded", runTests);
+
+      function runTests() {
+        console.log("Running visitor tracking tests...");
+
+        // Test 1: Check if VisitorTracker is loaded
+        const trackerLoaded = typeof VisitorTracker !== "undefined";
+        updateElement(
+          "trackerLoaded",
+          trackerLoaded ? "✅ Loaded" : "❌ Not Found",
+          trackerLoaded
+        );
+
+        // Test 2: Get session ID
+        const sessionId =
+          sessionStorage.getItem("visitor_session_id") || "Not set";
+        updateElement(
+          "sessionId",
+          sessionId !== "Not set"
+            ? "✅ " + sessionId.substring(0, 20) + "..."
+            : "⚠️ Not set"
+        );
+
+        // Test 3: Check Firebase
+        const firebaseLoaded = typeof firebase !== "undefined";
+        updateElement(
+          "firebaseStatus",
+          firebaseLoaded ? "✅ Loaded" : "⚠️ Not loaded (using localStorage)",
+          firebaseLoaded
+        );
+
+        // Test 4: Browser detection
+        const browser = getBrowser(navigator.userAgent);
+        updateElement("browser", browser);
+
+        // Test 5: Device detection
+        const device = getDevice(navigator.userAgent);
+        updateElement("device", device);
+
+        // Test 6: Screen size
+        const screenSize = `${window.screen.width}x${window.screen.height}`;
+        updateElement("screenSize", screenSize);
+
+        // Test 7: Language
+        updateElement("language", navigator.language);
+
+        // Test 8: LocalStorage
+        const lsAvailable = testLocalStorage();
+        updateElement(
+          "localStorageAvailable",
+          lsAvailable ? "✅ Available" : "❌ Not available",
+          lsAvailable
+        );
+
+        // Test 9: Stored visitors
+        const visitors = getStoredVisitors();
+        updateElement("totalVisitors", visitors.length);
+
+        // Test 10: Last visit
+        if (visitors.length > 0) {
+          const lastVisit = new Date(visitors[visitors.length - 1].timestamp);
+          updateElement("lastVisit", lastVisit.toLocaleString());
+        }
+
+        // Update status indicator
+        const statusIndicator = document.getElementById("statusIndicator");
+        if (trackerLoaded && lsAvailable) {
+          statusIndicator.className = "status success";
+          showAlert(
+            "✅ All tests passed! Visitor tracking is working correctly.",
+            "success"
+          );
+        } else {
+          statusIndicator.className = "status error";
+          showAlert(
+            "❌ Some tests failed. Check console for details.",
+            "error"
+          );
+        }
+      }
+
+      function updateElement(id, value, isSuccess = null) {
+        const element = document.getElementById(id);
+        element.textContent = value;
+
+        if (isSuccess !== null) {
+          element.className = "test-value " + (isSuccess ? "success" : "error");
+        }
+      }
+
+      function getBrowser(userAgent) {
+        if (userAgent.includes("Firefox")) return "🦊 Firefox";
+        if (userAgent.includes("Chrome")) return "🌐 Chrome";
+        if (userAgent.includes("Safari") && !userAgent.includes("Chrome"))
+          return "🧭 Safari";
+        if (userAgent.includes("Edge")) return "🌊 Edge";
+        return "❓ Other";
+      }
+
+      function getDevice(userAgent) {
+        if (/mobile/i.test(userAgent)) return "📱 Mobile";
+        if (/tablet|ipad/i.test(userAgent)) return "📲 Tablet";
+        return "💻 Desktop";
+      }
+
+      function testLocalStorage() {
+        try {
+          localStorage.setItem("test", "test");
+          localStorage.removeItem("test");
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function getStoredVisitors() {
+        try {
+          return JSON.parse(localStorage.getItem("portfolio_visitors") || "[]");
+        } catch {
+          return [];
+        }
+      }
+
+      function viewStoredData() {
+        const visitors = getStoredVisitors();
+
+        if (visitors.length === 0) {
+          showAlert(
+            "⚠️ No visitor data stored yet. Visit the portfolio page first!",
+            "error"
+          );
+          return;
+        }
+
+        const dataDisplay = document.getElementById("dataDisplay");
+        dataDisplay.innerHTML = `
+                <div class="code-block">
+                    <strong>📊 Stored Visitors (${visitors.length}):</strong>
+                    <pre>${JSON.stringify(visitors, null, 2)}</pre>
+                </div>
+            `;
+      }
+
+      function clearData() {
+        if (confirm("Are you sure you want to clear all visitor data?")) {
+          localStorage.removeItem("portfolio_visitors");
+          sessionStorage.removeItem("visitor_session_id");
+          sessionStorage.removeItem("interaction_logs");
+
+          showAlert("✅ All visitor data has been cleared!", "success");
+          runTests();
+
+          const dataDisplay = document.getElementById("dataDisplay");
+          dataDisplay.innerHTML = "";
+        }
+      }
+
+      function showAlert(message, type) {
+        const alertBox = document.getElementById("alertBox");
+        alertBox.textContent = message;
+        alertBox.className = "alert " + type + " show";
+
+        setTimeout(() => {
+          alertBox.className = "alert";
+        }, 5000);
+      }
+    </script>
+  </body>
+</html>

@@ -19,15 +19,29 @@ It presents your professional profile, projects, blogs, and contact options in a
 ## ✨ Key Features
 
 ### 🎨 Design & UI
+
 - LinkedIn-inspired **three-column responsive layout**
 - Professional color palette with **LinkedIn Blue (#0a66c2)** as primary color
 - **Light / Dark mode toggle** with `localStorage` persistence
 - Smooth animations, hover effects, and transitions
 - Fully **mobile-responsive** design
 
+### 📊 **NEW: Visitor Analytics Dashboard**
+
+- **Automatic visitor tracking** - Track who visits your portfolio
+- **Real-time analytics** - View visitor stats, locations, and behavior
+- **Professional dashboard** - Password-protected analytics page
+- **Interactive charts** - Visualize visitors over time and by location
+- **Traffic sources** - See where visitors are coming from
+- **Device & browser stats** - Understand your audience
+- **Data export** - Download visitor data as JSON
+- **Firebase integration** - Optional cloud storage for unlimited tracking
+- 📖 [**View Setup Guide**](VISITOR_TRACKING_GUIDE.md)
+
 ---
 
 ### 👤 Profile Section
+
 - Profile card with banner and overlapping avatar
 - Clickable profile picture with **full-screen image viewer**
 - Profile stats (viewers, impressions)
@@ -40,6 +54,7 @@ It presents your professional profile, projects, blogs, and contact options in a
 ---
 
 ### 📱 Navigation & Productivity Features
+
 - Top navigation bar:
   - Home
   - My Network
@@ -57,6 +72,7 @@ It presents your professional profile, projects, blogs, and contact options in a
 ## 📝 Content Sections
 
 ### 📰 Feed Posts
+
 - 9 dynamic posts:
   - 6 Project showcases
   - 3 Blog / Article posts
@@ -69,6 +85,7 @@ It presents your professional profile, projects, blogs, and contact options in a
 ---
 
 ### 🪟 Interactive Modals
+
 - **About Me** – Bio, technical skills, leadership experience
 - **Experience** – 4 professional roles with achievements
 - **Education** – Academic background
@@ -115,26 +132,31 @@ Full-length technical articles with professional formatting:
 ## 🛠️ Technical Stack
 
 ### Frontend
+
 - HTML5
 - CSS3
 - Vanilla JavaScript
 
 ### Styling
+
 - Custom CSS with CSS variables
 - Inter font family
 
 ### Integrations
+
 - **EmailJS** – Contact form handling
 - **Google Drive** – Resume hosting
 - **Font Awesome 6.4.0** – Icons
 
 ### Architecture
+
 - Event-driven, **modal-based design**
 - No backend required
 
 ---
 
 ## ✨ Interactive Enhancements
+
 - AI-powered **Chat Assistant** for visitor Q&A
 - Full-screen **Article Viewer**
 - Profile Image Zoom Viewer
@@ -144,6 +166,7 @@ Full-length technical articles with professional formatting:
 ---
 
 ## 📧 Contact Integration
+
 - EmailJS-based contact form
 - Client-side validation
 - Success and error notifications
@@ -152,6 +175,7 @@ Full-length technical articles with professional formatting:
 ---
 
 ## 🎯 User Experience & Performance
+
 - Fast loading with optimized assets
 - Keyboard accessibility & ARIA labels
 - SEO-friendly structure
@@ -161,6 +185,7 @@ Full-length technical articles with professional formatting:
 ---
 
 ## 📊 Right Sidebar Features
+
 - About summary
 - Top skills showcase
 - Recent articles preview
@@ -170,6 +195,7 @@ Full-length technical articles with professional formatting:
 ---
 
 ## 🎯 Ideal For
+
 - Software Developers & Engineers
 - Job Seekers in Tech
 - Freelancers & Consultants
@@ -179,12 +205,15 @@ Full-length technical articles with professional formatting:
 ---
 
 ## ✅ Highlights
+
 - ✔ LinkedIn-style professional UI
 - ✔ Fully frontend (no backend required)
 - ✔ Easy to customize & maintain
 - ✔ Interactive & engaging UX
 - ✔ Mobile responsive
 - ✔ Real-world service integrations
+- ✔ **NEW:** Professional visitor analytics dashboard
+- ✔ **NEW:** Automatic visitor tracking with charts & stats
 
 ---
 
@@ -193,3 +222,4 @@ Full-length technical articles with professional formatting:
 1. Clone the repository
    ```bash
    git clone https://github.com/jayantajm1/jayantajm1protfolio.git
+   ```
