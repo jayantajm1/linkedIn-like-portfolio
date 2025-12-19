@@ -1,0 +1,96 @@
+<div class="visitors-page">
+  <div class="page-header">
+    <h1>Visitors</h1>
+    <div class="actions">
+      <button (click)="exportData()" class="btn btn-primary">
+        Export Data
+      </button>
+      <button (click)="clearData()" class="btn btn-danger">Clear Data</button>
+    </div>
+  </div>
+
+  <div class="filters">
+    <div class="filter-group">
+      <label>Search</label>
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        (input)="applyFilters()"
+        placeholder="Search by country, browser, device..."
+        class="filter-input"
+      />
+    </div>
+
+    <div class="filter-group">
+      <label>Device</label>
+      <select
+        [(ngModel)]="filterDevice"
+        (change)="applyFilters()"
+        class="filter-select"
+      >
+        <option value="all">All Devices</option>
+        <option value="desktop">Desktop</option>
+        <option value="mobile">Mobile</option>
+        <option value="tablet">Tablet</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Country</label>
+      <select
+        [(ngModel)]="filterCountry"
+        (change)="applyFilters()"
+        class="filter-select"
+      >
+        <option value="all">All Countries</option>
+        <option *ngFor="let country of countries" [value]="country">
+          {{ country }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="visitors-stats">
+    <p>
+      Showing {{ filteredVisitors.length }} of {{ visitors.length }} visitors
+    </p>
+  </div>
+
+  <div class="visitors-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Date & Time</th>
+          <th>Location</th>
+          <th>Device</th>
+          <th>Browser</th>
+          <th>OS</th>
+          <th>Page</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let visitor of filteredVisitors">
+          <td>
+            <div>{{ visitor.date }}</div>
+            <small>{{ visitor.time }}</small>
+          </td>
+          <td>
+            <div *ngIf="visitor.location">
+              {{ visitor.location.city }}, {{ visitor.location.country }}
+            </div>
+            <div *ngIf="!visitor.location">Unknown</div>
+          </td>
+          <td>{{ visitor.device.type }}</td>
+          <td>{{ visitor.device.browser }}</td>
+          <td>{{ visitor.device.os }}</td>
+          <td>{{ visitor.page }}</td>
+          <td>{{ visitor.sessionDuration || 0 }}s</td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="filteredVisitors.length === 0" class="no-data">
+      No visitors found
+    </p>
+  </div>
+</div>

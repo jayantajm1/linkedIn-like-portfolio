@@ -1,0 +1,89 @@
+<div class="settings-page">
+  <div class="page-header">
+    <h1>Settings</h1>
+    <p class="subtitle">Configure your dashboard preferences</p>
+  </div>
+
+  <div class="settings-container">
+    <section class="settings-section">
+      <h2>Tracking Settings</h2>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Enable Visitor Tracking</h3>
+          <p>Track visitors who access your portfolio</p>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" [(ngModel)]="trackingEnabled" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Geo-Location Tracking</h3>
+          <p>Collect visitor location data</p>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" [(ngModel)]="geoLocationEnabled" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Interaction Tracking</h3>
+          <p>Track clicks and other interactions</p>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" [(ngModel)]="interactionsTracking" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <section class="settings-section">
+      <h2>Data Management</h2>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Data Retention Period</h3>
+          <p>Number of days to keep visitor data</p>
+        </div>
+        <select [(ngModel)]="dataRetentionDays" class="setting-select">
+          <option [value]="30">30 Days</option>
+          <option [value]="60">60 Days</option>
+          <option [value]="90">90 Days</option>
+          <option [value]="180">180 Days</option>
+          <option [value]="365">1 Year</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="settings-section">
+      <h2>Security</h2>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Dashboard Password</h3>
+          <p>Change your dashboard access password</p>
+        </div>
+        <input
+          type="password"
+          [(ngModel)]="password"
+          placeholder="Enter new password"
+          class="setting-input"
+        />
+      </div>
+    </section>
+
+    <div class="settings-actions">
+      <button (click)="saveSettings()" class="btn btn-primary">
+        Save Settings
+      </button>
+      <button (click)="resetSettings()" class="btn btn-secondary">
+        Reset to Defaults
+      </button>
+    </div>
+  </div>
+</div>

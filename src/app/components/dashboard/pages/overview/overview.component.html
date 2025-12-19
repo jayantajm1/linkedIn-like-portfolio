@@ -1,0 +1,67 @@
+<div class="overview-page">
+  <div class="page-header">
+    <h1>Overview</h1>
+    <p class="subtitle">Quick insights into your portfolio performance</p>
+  </div>
+
+  <div class="stats-grid" *ngIf="analytics">
+    <div class="stat-card">
+      <div class="stat-icon">👥</div>
+      <div class="stat-info">
+        <h3>{{ analytics.totalVisits }}</h3>
+        <p>Total Visits</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">🌟</div>
+      <div class="stat-info">
+        <h3>{{ analytics.uniqueVisitors }}</h3>
+        <p>Unique Visitors</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">⏱️</div>
+      <div class="stat-info">
+        <h3>{{ analytics.avgSessionDuration }}s</h3>
+        <p>Avg Session</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">📉</div>
+      <div class="stat-info">
+        <h3>{{ analytics.bounceRate }}%</h3>
+        <p>Bounce Rate</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="recent-visitors">
+    <h2>Recent Visitors</h2>
+    <div class="visitors-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Device</th>
+            <th>Browser</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let visitor of recentVisitors">
+            <td>{{ visitor.date }}</td>
+            <td>{{ visitor.time }}</td>
+            <td>{{ visitor.location?.country || "Unknown" }}</td>
+            <td>{{ visitor.device.type }}</td>
+            <td>{{ visitor.device.browser }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p *ngIf="recentVisitors.length === 0" class="no-data">No visitors yet</p>
+    </div>
+  </div>
+</div>

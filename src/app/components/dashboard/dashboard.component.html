@@ -1,0 +1,77 @@
+<div class="dashboard-wrapper" *ngIf="!isAuthenticated">
+  <div class="auth-modal">
+    <div class="auth-content">
+      <h2>Dashboard Login</h2>
+      <p>Enter password to access analytics</p>
+      <input
+        type="password"
+        #passwordInput
+        placeholder="Enter password"
+        (keyup.enter)="login(passwordInput.value)"
+        class="password-input"
+      />
+      <button (click)="login(passwordInput.value)" class="login-btn">
+        Login
+      </button>
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+      <p class="hint">Hint: Default password is "admin123"</p>
+    </div>
+  </div>
+</div>
+
+<div class="dashboard-container" *ngIf="isAuthenticated">
+  <aside class="dashboard-nav">
+    <div class="nav-header">
+      <h2>Analytics Dashboard</h2>
+    </div>
+    <nav>
+      <a
+        routerLink="/dashboard/overview"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="icon">📊</i>
+        <span>Overview</span>
+      </a>
+      <a
+        routerLink="/dashboard/visitors"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="icon">👥</i>
+        <span>Visitors</span>
+      </a>
+      <a
+        routerLink="/dashboard/analytics"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="icon">📈</i>
+        <span>Analytics</span>
+      </a>
+      <a
+        routerLink="/dashboard/reports"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="icon">📋</i>
+        <span>Reports</span>
+      </a>
+      <a
+        routerLink="/dashboard/settings"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="icon">⚙️</i>
+        <span>Settings</span>
+      </a>
+    </nav>
+    <div class="nav-footer">
+      <button (click)="logout()" class="logout-btn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="dashboard-main">
+    <router-outlet></router-outlet>
+  </main>
+</div>

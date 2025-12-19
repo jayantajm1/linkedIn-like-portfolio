@@ -1,0 +1,54 @@
+.analytics-page {
+  .page-header {
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 1rem;
+    }
+  }
+
+  .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+
+    .chart-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+      &.large {
+        grid-column: span 2;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      .chart-container {
+        position: relative;
+        height: 300px;
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .charts-grid {
+      grid-template-columns: 1fr;
+
+      .chart-card.large {
+        grid-column: span 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,1027 @@
+<!-- Navigation Bar -->
+<nav class="navigation-bar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <a href="#" class="nav-logo">
+        <i class="fab fa-linkedin"></i>
+        <span>JayantaMardi</span>
+      </a>
+      <div class="nav-search">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search" />
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="nav-item active">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-user-friends"></i>
+        <span>Network</span>
+      </a>
+      <a routerLink="/dashboard" class="nav-item">
+        <i class="fas fa-chart-line"></i>
+        <span>Analytics</span>
+      </a>
+      <a
+        href="#messages"
+        class="nav-item"
+        (click)="$event.preventDefault(); openChatAssistant()"
+      >
+        <i class="fas fa-comment-dots"></i>
+        <span>Messages</span>
+      </a>
+      <button
+        class="theme-toggle"
+        (click)="toggleTheme()"
+        [title]="isDarkTheme ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+      >
+        <i [class]="isDarkTheme ? 'fas fa-sun' : 'fas fa-moon'"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="portfolio-container">
+  <!-- Left Sidebar -->
+  <aside class="left-sidebar">
+    <!-- Profile Card -->
+    <div class="profile-card card">
+      <div class="profile-banner"></div>
+      <div class="profile-avatar-wrapper">
+        <img
+          src="assets/images/index.jpg"
+          alt="Jayanta Mardi"
+          class="profile-avatar"
+        />
+      </div>
+      <h3 class="profile-name">Jayanta Mardi</h3>
+      <p class="profile-headline">
+        Software Developer at National Informatics Centre
+      </p>
+
+      <!-- Profile Stats -->
+      <div class="profile-stats">
+        <div class="stat-item">
+          <span class="stat-label">Profile viewers</span>
+          <span class="stat-value">{{ profileViewers }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Post impressions</span>
+          <span class="stat-value">{{ postImpressions }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="quick-links-card card">
+      <h4>Quick Links</h4>
+      <a routerLink="/dashboard" class="quick-link">
+        <i class="fas fa-chart-line"></i>
+        <span>Analytics Dashboard</span>
+      </a>
+      <a
+        href="#experience-section"
+        class="quick-link"
+        (click)="$event.preventDefault(); openExperienceModal()"
+      >
+        <i class="fas fa-briefcase"></i>
+        <span>Experience</span>
+      </a>
+      <a
+        href="#education-section"
+        class="quick-link"
+        (click)="$event.preventDefault(); openEducationModal()"
+      >
+        <i class="fas fa-graduation-cap"></i>
+        <span>Education</span>
+      </a>
+      <a href="#skills-section" class="quick-link">
+        <i class="fas fa-code"></i>
+        <span>Skills</span>
+      </a>
+      <a
+        href="#about-section"
+        class="quick-link"
+        (click)="$event.preventDefault(); openAboutModal()"
+      >
+        <i class="fas fa-user"></i>
+        <span>About</span>
+      </a>
+      <a href="#blog-section" class="quick-link">
+        <i class="fas fa-blog"></i>
+        <span>Blog</span>
+      </a>
+      <a
+        href="#resume"
+        class="quick-link"
+        (click)="$event.preventDefault(); openResumeModal()"
+      >
+        <i class="fas fa-download"></i>
+        <span>Resume</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Feed -->
+  <main class="feed-container" id="feed-section">
+    <!-- Create Post Card -->
+    <div class="create-post-card card">
+      <div class="create-post-input">
+        <img
+          src="assets/images/index.jpg"
+          alt="Your avatar"
+          class="avatar-small"
+        />
+        <button class="post-input-btn" (click)="openPostModal()">
+          Share your thoughts, projects, or updates...
+        </button>
+      </div>
+      <div class="create-post-actions">
+        <button class="post-action-btn" (click)="openPostModal()">
+          <i class="fas fa-image"></i>
+          <span>Photo</span>
+        </button>
+        <button class="post-action-btn" (click)="openPostModal()">
+          <i class="fas fa-video"></i>
+          <span>Video</span>
+        </button>
+        <button class="post-action-btn" (click)="openPostModal()">
+          <i class="fas fa-file-code"></i>
+          <span>Project</span>
+        </button>
+        <button class="post-action-btn" (click)="openPostModal()">
+          <i class="fas fa-pen"></i>
+          <span>Article</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Feed Posts -->
+    <div id="feed-posts" class="projects-section">
+      <div *ngFor="let post of posts" class="post-card card">
+        <div class="post-header">
+          <img [src]="post.avatar" [alt]="post.author" class="post-avatar" />
+          <div class="post-author-info">
+            <h4 class="post-author">{{ post.author }}</h4>
+            <p class="post-meta">{{ post.headline }} • {{ post.timestamp }}</p>
+          </div>
+        </div>
+        <div class="post-content">
+          <p class="post-description" style="white-space: pre-line">
+            {{ post.content }}
+          </p>
+          <div *ngIf="post.tags && post.tags.length > 0" class="post-tags">
+            <span *ngFor="let tag of post.tags" class="post-tag">{{
+              tag
+            }}</span>
+          </div>
+          <img
+            *ngIf="post.image"
+            [src]="post.image"
+            [alt]="post.link?.title || post.type"
+            class="post-image"
+          />
+
+          <!-- Project/Article Link Card -->
+          <div *ngIf="post.link" class="post-link-card">
+            <a [href]="post.link.url" target="_blank" class="post-link">
+              <div class="post-link-content">
+                <h5 class="post-link-title">{{ post.link.title }}</h5>
+                <p class="post-link-description">{{ post.link.description }}</p>
+                <span class="post-link-url">{{ post.link.url }}</span>
+              </div>
+              <i class="fas fa-external-link-alt post-link-icon"></i>
+            </a>
+            <a
+              *ngIf="post.link.github"
+              [href]="post.link.github"
+              target="_blank"
+              class="github-link"
+            >
+              <i class="fab fa-github"></i>
+              <span>View on GitHub</span>
+            </a>
+          </div>
+        </div>
+        <div class="post-engagement">
+          <span class="engagement-item">
+            <i class="far fa-thumbs-up"></i> {{ post.likes }}
+          </span>
+          <span class="engagement-item">
+            <i class="far fa-comment"></i> {{ post.comments }} comments
+          </span>
+          <span class="engagement-item">
+            <i class="fas fa-share"></i> {{ post.shares }} shares
+          </span>
+        </div>
+        <div class="post-actions">
+          <button class="action-btn" (click)="toggleLike(post)">
+            <i class="far fa-thumbs-up"></i>
+            <span>Like</span>
+          </button>
+          <button class="action-btn">
+            <i class="far fa-comment"></i>
+            <span>Comment</span>
+          </button>
+          <button class="action-btn">
+            <i class="fas fa-share"></i>
+            <span>Share</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Right Sidebar -->
+  <aside class="right-sidebar">
+    <!-- About Card -->
+    <div class="about-card card" id="about-section">
+      <h4>About</h4>
+      <p>
+        Full Stack Developer specializing in ASP.NET Core, Angular, and
+        PostgreSQL. Building scalable e-Governance applications at NIC, Kolkata.
+      </p>
+      <div class="social-links">
+        <a href="https://github.com/jayantajm1" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/mardijm/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/jayantajm1" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/metjayanta" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Skills Card -->
+    <div class="skills-card card" id="skills-section">
+      <h4>Top Skills</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">ASP.NET Core</span>
+        <span class="skill-tag">Angular</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">RabbitMQ</span>
+        <span class="skill-tag">C#</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">EF Core</span>
+      </div>
+    </div>
+
+    <!-- Recent Articles Card -->
+    <div class="articles-card card">
+      <h4>Recent Articles</h4>
+      <div class="article-preview">
+        <div class="article-preview-image">
+          <img
+            src="assets/images/web-app-blog.jpg"
+            alt="Web Application Development"
+          />
+        </div>
+        <div class="article-preview-content">
+          <h5>An Ultimate Guide to Web Application Development</h5>
+          <span class="article-date">Nov 28, 2024</span>
+        </div>
+      </div>
+      <div class="article-preview">
+        <div class="article-preview-image">
+          <img
+            src="assets/images/cyber-security-blog.jpg"
+            alt="Cybersecurity"
+          />
+        </div>
+        <div class="article-preview-content">
+          <h5>Cybersecurity in Modern Applications</h5>
+          <span class="article-date">Nov 15, 2024</span>
+        </div>
+      </div>
+      <button class="view-all-btn">View All Articles</button>
+    </div>
+
+    <!-- Recent Activity Card -->
+    <div class="activity-card card">
+      <h4>Recent Activity</h4>
+      <div class="activity-item">
+        <i class="fas fa-code"></i>
+        <div class="activity-text">
+          <p><strong>New Project:</strong> Microservices Architecture</p>
+          <span class="activity-time">2 days ago</span>
+        </div>
+      </div>
+      <div class="activity-item">
+        <i class="fas fa-pen"></i>
+        <div class="activity-text">
+          <p><strong>Published:</strong> Clean Architecture in .NET</p>
+          <span class="activity-time">5 days ago</span>
+        </div>
+      </div>
+      <div class="activity-item">
+        <i class="fas fa-certificate"></i>
+        <div class="activity-text">
+          <p><strong>Completed:</strong> Advanced Docker Course</p>
+          <span class="activity-time">1 week ago</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-links">
+      <a href="#about" (click)="$event.preventDefault(); openAboutModal()"
+        >About</a
+      >
+      <a href="#privacy" (click)="$event.preventDefault(); showPrivacy()"
+        >Privacy</a
+      >
+      <a href="#terms" (click)="$event.preventDefault(); showTerms()">Terms</a>
+      <a href="#contact" (click)="$event.preventDefault(); openContactModal()"
+        >Contact</a
+      >
+      <p class="copyright">&copy; 2025 Jayanta Mardi</p>
+    </div>
+  </aside>
+</div>
+
+<!-- Navigation Bar -->
+<nav class="navigation-bar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <a href="#" class="nav-logo">
+        <i class="fab fa-linkedin"></i>
+        <span>JayantaMardi</span>
+      </a>
+      <div class="nav-search">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search" />
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="nav-item active">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-user-friends"></i>
+        <span>Network</span>
+      </a>
+      <a routerLink="/dashboard" class="nav-item">
+        <i class="fas fa-chart-line"></i>
+        <span>Analytics</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-comment-dots"></i>
+        <span>Messages</span>
+      </a>
+      <button
+        class="theme-toggle"
+        (click)="toggleTheme()"
+        [title]="isDarkTheme ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+      >
+        <i [class]="isDarkTheme ? 'fas fa-sun' : 'fas fa-moon'"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Experience Modal -->
+<div
+  *ngIf="showExperienceModal"
+  class="modal active"
+  (click)="closeExperienceModal()"
+>
+  <div
+    class="modal-content experience-modal-content"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="modal-header">
+      <h3><i class="fas fa-briefcase"></i> Professional Experience</h3>
+      <button class="modal-close" (click)="closeExperienceModal()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body experience-modal-body">
+      <div class="experience-timeline">
+        <!-- Software Developer -->
+        <div class="experience-item">
+          <div class="experience-header">
+            <div class="company-logo">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="experience-info">
+              <h4>Software Developer</h4>
+              <p class="company-name">
+                National Informatics Centre (NIC), Kolkata
+              </p>
+              <p class="duration">
+                <i class="far fa-calendar-alt"></i> June 2025 - Present
+              </p>
+            </div>
+          </div>
+          <div class="experience-description">
+            <p>
+              Building secure and scalable e-Governance applications using
+              <strong>ASP.NET Core</strong>, <strong>Angular</strong>, and
+              <strong>PostgreSQL</strong>.
+            </p>
+            <ul>
+              <li>
+                Engineered <strong>100+ production APIs</strong> across
+                platforms like ePension, ePanchayat, and JIT, serving
+                <strong>20,000+ users</strong>
+              </li>
+              <li>
+                Improved backend performance by <strong>40%</strong> through EF
+                Core optimization, caching, and refactoring
+              </li>
+              <li>
+                Designed enterprise-grade authentication with
+                <strong>AES-encrypted JWT middleware</strong>
+              </li>
+              <li>
+                Built modular microservices with ASP.NET Core, RabbitMQ, and
+                PostgreSQL
+              </li>
+              <li>
+                Integrated <strong>OpenTelemetry</strong>, Prometheus, Grafana,
+                and Loki for observability
+              </li>
+              <li>
+                Reduced defects by <strong>30%</strong> through robust
+                validation and testing
+              </li>
+            </ul>
+            <div class="experience-skills">
+              <span class="skill-badge">ASP.NET Core</span>
+              <span class="skill-badge">Angular</span>
+              <span class="skill-badge">PostgreSQL</span>
+              <span class="skill-badge">RabbitMQ</span>
+              <span class="skill-badge">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Software Developer Intern -->
+        <div class="experience-item">
+          <div class="experience-header">
+            <div class="company-logo">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="experience-info">
+              <h4>Software Developer Intern</h4>
+              <p class="company-name">National Informatics Centre (NIC)</p>
+              <p class="duration">
+                <i class="far fa-calendar-alt"></i> September 2024 - May 2025
+              </p>
+            </div>
+          </div>
+          <div class="experience-description">
+            <p>
+              Contributed to key modules of <strong>ePanchayat</strong> and
+              <strong>User Management</strong>.
+            </p>
+            <ul>
+              <li>
+                Built and optimized <strong>ASP.NET Core APIs</strong> for fund
+                management
+              </li>
+              <li>
+                Improved system reliability through validation layers and
+                performance-focused SQL queries
+              </li>
+              <li>Worked in agile environment with senior developers</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Ethical Hacking Intern -->
+        <div class="experience-item">
+          <div class="experience-header">
+            <div class="company-logo">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="experience-info">
+              <h4>Ethical Hacking and Penetration Testing Intern</h4>
+              <p class="company-name">C-DAC - Noida (Remote)</p>
+              <p class="duration">
+                <i class="far fa-calendar-alt"></i> August 2024 - October 2024
+              </p>
+            </div>
+          </div>
+          <div class="experience-description">
+            <p>
+              Completed hands-on training in
+              <strong>ethical hacking</strong> and vulnerability assessment.
+            </p>
+            <ul>
+              <li>
+                Gained experience using <strong>Metasploit</strong>,
+                <strong>Nmap</strong>, and <strong>Wireshark</strong>
+              </li>
+              <li>
+                Worked on identifying cyber threats and applying defensive
+                strategies
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Design Lead -->
+        <div class="experience-item">
+          <div class="experience-header">
+            <div class="company-logo">
+              <i class="fas fa-palette"></i>
+            </div>
+            <div class="experience-info">
+              <h4>Design Lead</h4>
+              <p class="company-name">ByteMonk-GTC Tech Club</p>
+              <p class="duration">
+                <i class="far fa-calendar-alt"></i> 2023 - 2024
+              </p>
+            </div>
+          </div>
+          <div class="experience-description">
+            <p>
+              Led design initiatives for community events, hackathons, and tech
+              workshops.
+            </p>
+            <ul>
+              <li>
+                Enhanced leadership, event management, and creative design
+                skills
+              </li>
+              <li>
+                Mentored junior members in design principles and development
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Education Modal -->
+<div
+  *ngIf="showEducationModal"
+  class="modal active"
+  (click)="closeEducationModal()"
+>
+  <div
+    class="modal-content education-modal-content"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="modal-header">
+      <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+      <button class="modal-close" (click)="closeEducationModal()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body education-modal-body">
+      <div class="education-timeline">
+        <!-- Bachelor of Technology -->
+        <div class="education-item">
+          <div class="education-header">
+            <div class="education-logo">
+              <i class="fas fa-university"></i>
+            </div>
+            <div class="education-info">
+              <h4>Bachelor of Technology in Computer Science</h4>
+              <p class="institution-name">
+                Government College of Engineering and Ceramic Technology
+              </p>
+              <p class="education-board">MAKAUT, West Bengal</p>
+              <p class="duration">
+                <i class="far fa-calendar-alt"></i> 2021 - 2025
+              </p>
+            </div>
+          </div>
+          <div class="education-description">
+            <p>
+              Completed Computer Science Engineering with focus on software
+              development, system design, and modern web technologies.
+            </p>
+            <div class="education-highlights">
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Software Development & System Design</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Data Structures & Algorithms</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Web Technologies & Frameworks</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Database Management Systems</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Higher Secondary -->
+        <div class="education-item">
+          <div class="education-header">
+            <div class="education-logo">
+              <i class="fas fa-school"></i>
+            </div>
+            <div class="education-info">
+              <h4>Higher Secondary Education</h4>
+              <p class="institution-name">
+                Aiho High School H:S, Malda, West Bengal
+              </p>
+              <p class="education-board">WBCHSE</p>
+              <p class="duration">
+                <i class="far fa-calendar-alt"></i> 2017 - 2019
+              </p>
+            </div>
+          </div>
+          <div class="education-description">
+            <p>
+              Completed higher secondary education with Science stream, building
+              foundation in Physics, Chemistry, Mathematics, and Computer
+              Science.
+            </p>
+          </div>
+        </div>
+
+        <!-- Secondary Education -->
+        <div class="education-item">
+          <div class="education-header">
+            <div class="education-logo">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="education-info">
+              <h4>Secondary Education</h4>
+              <p class="institution-name">
+                Aiho High School H:S, Malda, West Bengal
+              </p>
+              <p class="education-board">WBBSE</p>
+              <p class="duration"><i class="far fa-calendar-alt"></i> 2017</p>
+            </div>
+          </div>
+          <div class="education-description">
+            <p>
+              Completed secondary education with strong academic performance
+              across all subjects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About Modal -->
+<div *ngIf="showAboutModal" class="modal active" (click)="closeAboutModal()">
+  <div
+    class="modal-content about-modal-content"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="modal-header">
+      <h3><i class="fas fa-user"></i> About Me</h3>
+      <button class="modal-close" (click)="closeAboutModal()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="about-profile">
+        <img
+          src="assets/images/index.jpg"
+          alt="Jayanta Mardi"
+          class="about-avatar"
+        />
+        <h2>Jayanta Mardi</h2>
+        <p class="about-title">Full Stack Developer</p>
+        <p class="about-location">
+          <i class="fas fa-map-marker-alt"></i> Kolkata, India
+        </p>
+      </div>
+      <div class="about-description">
+        <p>
+          Passionate Full Stack Developer with 1+ year of professional
+          experience at National Informatics Centre (NIC), Kolkata. Specialized
+          in building scalable e-Governance applications that serve thousands of
+          users.
+        </p>
+        <p>
+          I thrive on solving complex problems and creating efficient,
+          user-friendly solutions using modern technologies like ASP.NET Core,
+          Angular, and PostgreSQL.
+        </p>
+      </div>
+      <div class="about-social">
+        <h4>Connect with me</h4>
+        <div class="social-links">
+          <a
+            href="https://github.com/jayantajm1"
+            target="_blank"
+            class="social-btn"
+          >
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mardijm/"
+            target="_blank"
+            class="social-btn"
+          >
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a
+            href="https://instagram.com/jayantajm1"
+            target="_blank"
+            class="social-btn"
+          >
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a
+            href="https://www.facebook.com/metjayanta"
+            target="_blank"
+            class="social-btn"
+          >
+            <i class="fab fa-facebook"></i> Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Modal -->
+<div
+  *ngIf="showContactModal"
+  class="modal active"
+  (click)="closeContactModal()"
+>
+  <div
+    class="modal-content contact-modal-content"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="modal-header">
+      <h3><i class="fas fa-envelope"></i> Get In Touch</h3>
+      <button class="modal-close" (click)="closeContactModal()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:jayantaofficial84@gmail.com"
+              >jayantaofficial84&#64;gmail.com</a
+            >
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <div>
+            <h4>LinkedIn</h4>
+            <a href="https://www.linkedin.com/in/mardijm/" target="_blank"
+              >linkedin.com/in/mardijm/</a
+            >
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <div>
+            <h4>GitHub</h4>
+            <a href="https://github.com/jayantajm1" target="_blank"
+              >github.com/jayantajm1</a
+            >
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h4>Location</h4>
+            <p>Kolkata, India</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h4>Send a Message</h4>
+        <p class="contact-note">
+          Feel free to reach out for collaborations, opportunities, or just to
+          say hi!
+        </p>
+        <form>
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" rows="4" required></textarea>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Post Modal -->
+<div *ngIf="showPostModal" class="modal active" (click)="closePostModal()">
+  <div
+    class="modal-content post-modal-content"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="modal-header">
+      <h3><i class="fas fa-pen"></i> Create a Post</h3>
+      <button class="modal-close" (click)="closePostModal()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="post-creator">
+        <div class="post-creator-header">
+          <img
+            src="assets/images/index.jpg"
+            alt="Your avatar"
+            class="avatar-small"
+          />
+          <div>
+            <h4>Jayanta Mardi</h4>
+            <select class="visibility-select">
+              <option>🌍 Public</option>
+              <option>👥 Connections only</option>
+            </select>
+          </div>
+        </div>
+        <textarea
+          placeholder="What do you want to talk about?"
+          rows="6"
+        ></textarea>
+        <div class="post-creator-actions">
+          <button class="media-btn"><i class="fas fa-image"></i> Photo</button>
+          <button class="media-btn"><i class="fas fa-video"></i> Video</button>
+          <button class="media-btn">
+            <i class="fas fa-file-code"></i> Document
+          </button>
+          <button class="media-btn">
+            <i class="fas fa-chart-bar"></i> Poll
+          </button>
+        </div>
+        <button class="btn-primary post-submit-btn">Post</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Resume Modal -->
+<div *ngIf="showResumeModal" class="modal active" (click)="closeResumeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2><i class="fas fa-file-download"></i> Resume & Resources</h2>
+      <button class="modal-close" (click)="closeResumeModal()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="resume-section">
+        <div class="resume-info">
+          <i class="fas fa-file-pdf resume-icon"></i>
+          <div>
+            <h3>Professional Resume</h3>
+            <p>
+              Download or view my complete professional resume with detailed
+              work experience, education, and skills.
+            </p>
+          </div>
+        </div>
+        <div class="resume-actions">
+          <a
+            href="https://drive.google.com/uc?export=download&id=1Ivwhtr9i3UUAKlgM_KrfVdGqfxyYm1DS"
+            class="btn-primary"
+            download
+          >
+            <i class="fas fa-download"></i> Download
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1Ivwhtr9i3UUAKlgM_KrfVdGqfxyYm1DS/view?usp=sharing"
+            target="_blank"
+            class="btn-secondary"
+          >
+            <i class="fas fa-eye"></i> View
+          </a>
+        </div>
+      </div>
+
+      <div class="resume-details">
+        <h4>What's Inside</h4>
+        <ul class="resume-features">
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <span>Professional Summary & Objective</span>
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <span>Work Experience & Achievements</span>
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <span>Technical Skills & Expertise</span>
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <span>Education & Certifications</span>
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <span>Projects & Portfolio Links</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="resume-note">
+        <i class="fas fa-info-circle"></i>
+        <p>
+          For any custom requirements or additional information, feel free to
+          <a
+            href="#"
+            (click)="
+              $event.preventDefault(); closeResumeModal(); openContactModal()
+            "
+            >contact me</a
+          >.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chat Assistant Modal -->
+<div
+  *ngIf="showChatAssistant"
+  class="modal active"
+  (click)="closeChatAssistant()"
+>
+  <div
+    class="modal-content chat-assistant-content"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="modal-header">
+      <div class="chat-header-info">
+        <i class="fas fa-robot"></i>
+        <div>
+          <h3>Portfolio Assistant</h3>
+          <span class="status-online">Online</span>
+        </div>
+      </div>
+      <button class="modal-close" (click)="closeChatAssistant()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body chat-body">
+      <div class="chatbot-messages" #chatMessagesContainer>
+        <div
+          *ngFor="let message of chatMessages"
+          [class]="message.type === 'user' ? 'user-message' : 'bot-message'"
+        >
+          <div class="message-content">{{ message.content }}</div>
+        </div>
+      </div>
+      <div class="chatbot-suggestions">
+        <button
+          class="suggestion-btn"
+          (click)="askQuestion('What are your skills?')"
+        >
+          What are your skills?
+        </button>
+        <button
+          class="suggestion-btn"
+          (click)="askQuestion('Tell me about your experience')"
+        >
+          Tell me about your experience
+        </button>
+        <button
+          class="suggestion-btn"
+          (click)="askQuestion('Show me your projects')"
+        >
+          Show me your projects
+        </button>
+        <button
+          class="suggestion-btn"
+          (click)="askQuestion('How can I contact you?')"
+        >
+          How can I contact you?
+        </button>
+      </div>
+    </div>
+    <div class="modal-footer chat-footer">
+      <input
+        type="text"
+        [(ngModel)]="chatInput"
+        placeholder="Type a message..."
+        (keypress)="$event.key === 'Enter' && sendChatMessage()"
+      />
+      <button class="btn-primary" (click)="sendChatMessage()">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,106 @@
+.overview-page {
+  .page-header {
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 1rem;
+    }
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    .stat-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .stat-icon {
+        font-size: 2.5rem;
+      }
+
+      .stat-info {
+        h3 {
+          font-size: 2rem;
+          color: #0a66c2;
+          margin-bottom: 0.25rem;
+        }
+
+        p {
+          color: #666;
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+
+  .recent-visitors {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .visitors-table {
+      overflow-x: auto;
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+          background: #f3f2ef;
+
+          th {
+            padding: 0.75rem;
+            text-align: left;
+            color: #666;
+            font-weight: 600;
+            font-size: 0.875rem;
+          }
+        }
+
+        tbody {
+          tr {
+            border-bottom: 1px solid #e0dfdc;
+
+            &:hover {
+              background: #f9f9f9;
+            }
+
+            td {
+              padding: 0.75rem;
+              color: #333;
+              font-size: 0.875rem;
+            }
+          }
+        }
+      }
+
+      .no-data {
+        text-align: center;
+        padding: 2rem;
+        color: #999;
+      }
+    }
+  }
+}

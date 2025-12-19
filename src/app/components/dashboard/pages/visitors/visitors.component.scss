@@ -1,0 +1,143 @@
+.visitors-page {
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+
+      .btn {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: all 0.3s;
+
+        &.btn-primary {
+          background: #0a66c2;
+          color: white;
+
+          &:hover {
+            background: #084d92;
+          }
+        }
+
+        &.btn-danger {
+          background: #d93025;
+          color: white;
+
+          &:hover {
+            background: #b8251f;
+          }
+        }
+      }
+    }
+  }
+
+  .filters {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+
+    .filter-group {
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #666;
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+
+      .filter-input,
+      .filter-select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 0.875rem;
+
+        &:focus {
+          outline: none;
+          border-color: #0a66c2;
+        }
+      }
+    }
+  }
+
+  .visitors-stats {
+    margin-bottom: 1rem;
+    color: #666;
+    font-size: 0.875rem;
+  }
+
+  .visitors-table {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      thead {
+        background: #f3f2ef;
+
+        th {
+          padding: 0.75rem;
+          text-align: left;
+          color: #666;
+          font-weight: 600;
+          font-size: 0.875rem;
+          white-space: nowrap;
+        }
+      }
+
+      tbody {
+        tr {
+          border-bottom: 1px solid #e0dfdc;
+
+          &:hover {
+            background: #f9f9f9;
+          }
+
+          td {
+            padding: 0.75rem;
+            color: #333;
+            font-size: 0.875rem;
+
+            div {
+              margin-bottom: 0.25rem;
+            }
+
+            small {
+              color: #999;
+              font-size: 0.75rem;
+            }
+          }
+        }
+      }
+    }
+
+    .no-data {
+      text-align: center;
+      padding: 2rem;
+      color: #999;
+    }
+  }
+}
